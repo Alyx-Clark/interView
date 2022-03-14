@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'; 
+import './navbar.css'; 
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -26,12 +27,19 @@ class NavBar extends React.Component {
         } else {
             return (
                 <div className='nav-bar-container'>
-                    <div className='login-button-container'>
-                        <button className="login-button" onClick={() => this.props.open('login')}>Log in</button>
+
+                    <div className='nav-header-container'>
+                        <h1 className='nav-header'>interView</h1>
                     </div>
 
-                    <div className='signup-button-container'>
-                        <button className="signup-button" onClick={() => this.props.open('signup')}>Sign up</button>
+                    <div className='user-auth-container'>
+                        <div className='login-button-container'>
+                            <button className="login-button" onClick={() => this.props.open('login')}>Log in</button>
+                        </div>
+
+                        <div className='signup-button-container'>
+                            <button className="signup-button" onClick={() => this.props.open('signup')}>Sign up</button>
+                        </div>
                     </div>
                 </div>
             );
@@ -41,7 +49,6 @@ class NavBar extends React.Component {
     render() {
         return (
             <div>
-                <h1 className='nav-header'>interView</h1>
                 {this.getLinks()}
             </div>
         );
