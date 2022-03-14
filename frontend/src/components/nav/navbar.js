@@ -25,7 +25,7 @@ class NavBar extends React.Component {
             );
         } else {
             return (
-                <div>
+                <div className='nav-bar-container'>
                     <div className='login-button-container'>
                         <button className="login-button" onClick={() => this.props.open('login')}>Log in</button>
                     </div>
@@ -41,7 +41,7 @@ class NavBar extends React.Component {
     render() {
         return (
             <div>
-                <h1>interView</h1>
+                <h1 className='nav-header'>interView</h1>
                 {this.getLinks()}
             </div>
         );
