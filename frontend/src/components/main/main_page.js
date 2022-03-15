@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet'; 
 
 class MainPage extends React.Component {
 
@@ -23,7 +24,8 @@ class MainPage extends React.Component {
                         </img>
                     </div>
                     <div className='slogan2-container'>
-                        <h2>asfdlkasdj;flkjasd; fasdf asdflj asdfasd asdf asdfasd f asdf asdfalsd fasdlfjas asdfas asdfasd asdfas dfds aasdf sadf afsdfasdf sadf asdf</h2>
+                        <h1>Time to pass the interview</h1>
+                        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum scelerisque, ante nec consectetur volutpat, ipsum massa ultrices lectus, eu bibendum nunc odio gravida mi. Sed nec nisi lacus. Donec faucibus maximus dapibus. Nam sed nisi lectus. In porttitor efficitur lectus, nec vestibulum enim laoreet ut. In hac habitasse platea dictumst. Aliquam aliquam quis sem vitae semper.</h2>
                         <button className='scroll-button2'>SCROLL DOWN FOR MORE INFO</button>
                     </div>
                 </section>
@@ -69,6 +71,10 @@ class MainPage extends React.Component {
                         <span>personal links go here</span>
                     </div>
                 </footer>
+                <Helmet>
+                    <scrpit type="text/javascript">
+                    </scrpit>
+                </Helmet>
             </div>
         );
     }

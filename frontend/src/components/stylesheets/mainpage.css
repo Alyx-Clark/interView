@@ -1,6 +1,41 @@
+@keyframes anime1 {
+    from{
+        left: -50%; 
+    }
+    to{
+        left: 0%; 
+    }
+}
+
+@keyframes anime2 {
+    from{
+        left: -50%; 
+    }
+    to{
+        left: 10%; 
+    }
+}
+
+@keyframes anime3 {
+    from{
+        right: -50%; 
+    }
+    to{
+        right: 0%; 
+    }
+}
+
+
 .main-page-background {
     width: 100%;
-    height: 300vh;
+    height: 100%;
+    /* overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory; */
+}
+
+section {
+    scroll-snap-align: center;
 }
 
 .main-section {
@@ -21,12 +56,17 @@
     color: rgb(17, 87, 69);
 }
 
+
 .slogan-container h1 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 70px;
     line-height: 150%;
     margin-bottom: 50px;
+    position: relative;
+    left: -100%; 
+    animation: anime1 1s forwards 0.1s;
 }
+
 
 .scroll-button {
     background-color: transparent;
@@ -37,6 +77,9 @@
     transition: all ease 1s;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
+    position: relative;
+    left: -100%; 
+    animation: anime2 2s forwards 1s;
 }
 
 .scroll-button:after {
@@ -69,6 +112,9 @@
     align-items: center;
     padding-right: 100px;
     margin-top: 30px;
+    position: relative;
+    right: -150%; 
+    animation: anime3 2s forwards 1s;
 }
 
 .main-img-container img {
@@ -84,12 +130,6 @@
     justify-content: space-between;
     align-items: center;
 }
-
-/* .img-group {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-} */
 
 .img1-container {
     width: 40%;
@@ -115,10 +155,17 @@
     color: rgb(33, 101, 110);
 }
 
+.slogan2-container h1{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 70px;
+    line-height: 150%;
+    margin-bottom: 30px;
+}
+
 .slogan2-container h2{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 30px;
-    line-height: 150%;
+    font-size: 20px;
+    line-height: 120%;
     margin-bottom: 50px;
 }
 
