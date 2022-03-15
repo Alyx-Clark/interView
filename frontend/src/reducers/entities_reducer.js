@@ -1,7 +1,7 @@
-// import { combineReducers } from 'redux';
+import { combineReducers } from 'redux';
 
-// import feedbacks from './feedbacks_reducer';
+import feedbacks from './feedbacks_reducer';
 
-// export default combineReducers({
-//   feedbacks,
-// });
+export default combineReducers({
+  feedbacks,
+});
