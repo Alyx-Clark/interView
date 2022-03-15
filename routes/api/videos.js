@@ -2,6 +2,13 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
+const multer  = require('multer');
+const upload = multer({ dest: 'uploads/' });
+const { uploadFile, getFileStream } = require('../../s3')
+const fs = require('fs')
+const util = require('util')
+const unlinkFile = util.promisify(fs.unlink)
+const app = express();
 
 const Video = require('../../models/Video');
 const validateVideoInput = require('../../validations/video');
@@ -27,6 +34,12 @@ router.get('/user/:user_id', (req, res) => {
             res.status(404).json({ novideosfound: 'No videos found from that user' }
             )
         );
+});
+
+router.get('/stream/:id', (req, res) => {
+    const key = req.params.id
+    const readStream = getFileStream(key)
+    readStream.pipe(res)
 });
 
 router.get('/:id', (req, res) => {
@@ -62,25 +75,51 @@ router.get('/:id/rubric', (req, res) => {
 
 // create video
 
-router.post('/user/:user_id',
-    // passport.authenticate('jwt', { session: false }),
-    (req, res) => {
-        const { errors, isValid } = validateVideoInput(req.body);
+// router.post('/user/:user_id',
+//     // passport.authenticate('jwt', { session: false }),
+//     (req, res) => {
+//         const { errors, isValid } = validateVideoInput(req.body);
 
-        if (!isValid) {
-            return res.status(400).json(errors);
-        }
+//         if (!isValid) {
+//             return res.status(400).json(errors);
+//         }
 
-        const newVideo = new Video({
-            user: req.body.user,
-            // video: req.body.video,
-            question: req.body.question,
-            experience: req.body.experience,
-            industry: req.body.industry,
-        });
+//         const newVideo = new Video({
+//             user: req.body.user,
+//             // video: req.body.video,
+//             question: req.body.question,
+//             experience: req.body.experience,
+//             industry: req.body.industry,
+//         });
 
-        newVideo.save().then(video => res.json(video));
+//         newVideo.save().then(video => res.json(video));
+//     }
+// );
+
+router.post('/user/:user_id', passport.authenticate('jwt', { session: false }), upload.single('file'), (req, res) => {
+    const input = {file: req.file, question: req.body.question, user: req.body.user, experience: req.body.experience, industry: req.body.industry};
+    const { errors, isValid } = validateVideoInput(input);
+
+    if (!isValid) {
+      return res.status(400).json(errors);
     }
+    const file = req.file;
+    console.log(file)
+    uploadFile(file)
+    .then(response => {
+      let videoUrl = response.Key
+
+      const newVideo = new Video({
+        question: req.body.question,
+        file: videoUrl,
+        user: req.body.user,
+        experience: req.body.experience,
+        industry: req.body.industry
+    });
+      newVideo.save().then(video => res.json(video));
+      unlinkFile(file.path)
+    })
+  }
 );
 
 // update video
