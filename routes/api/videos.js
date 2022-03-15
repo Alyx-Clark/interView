@@ -64,12 +64,12 @@ router.get('/feedbacks/:id', (req, res) => {
 
 
 router.get('/:id/rubric', (req, res) => {
-    res.json({ msg: "This is the rubric for that video" });
-    // Video.findById(req.params.id)
-    //     .then(video => res.json(video))
-    //     .catch(err =>
-    //         res.status(404).json({ novideofound: 'No video found with that ID' })
-    //     );
+    // res.json({ msg: "This is the rubric for that video" });
+    Rubric.find({ video: req.params.id })
+        .then(rubrics => res.json(rubrics))
+        .catch(err =>
+            res.status(404).json({ novideofound: 'No video found with that ID' })
+        );
 });
 
 
@@ -111,7 +111,7 @@ router.post('/user/:user_id', passport.authenticate('jwt', { session: false }), 
 
       const newVideo = new Video({
         question: req.body.question,
-        file: videoUrl,
+        file: req.body.videoUrl,
         user: req.body.user,
         experience: req.body.experience,
         industry: req.body.industry
