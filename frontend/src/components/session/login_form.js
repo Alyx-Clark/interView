@@ -65,8 +65,8 @@ class LoginForm extends React.Component {
 
                     <div className='session-header-container'>
                         <div className='session-header'>
-                            <h1 className='inter'>Inter</h1>
-                            <h1 className='view'>view</h1>
+                            <h1 className='inter'>inter</h1>
+                            <h1 className='view'>View</h1>
                         </div>
                     </div>
 
