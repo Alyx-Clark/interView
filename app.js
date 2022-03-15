@@ -9,15 +9,12 @@ const videos = require("./routes/api/videos");
 const feedbacks = require("./routes/api/feedbacks");
 const rubrics = require("./routes/api/rubrics");
 const bodyParser = require('body-parser');
-const multer = require('multer') //
-const upload = multer({ dest: 'images/'}) //
 const fs = require('fs')
 const passport = require('passport');
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use('/images', express.static('images'))
 
 mongoose
     .connect(db, { useNewUrlParser: true })
