@@ -31,8 +31,8 @@ class NavBar extends React.Component {
                     <div className='nav-header-container'>
                         {/* <img/> */}
                         <div className='nav-header'>
-                            <h1 className='inter'>Inter</h1>
-                            <h1 className='view'>view</h1>
+                            <h1 className='inter'>inter</h1>
+                            <h1 className='view'>View</h1>
                         </div>
                     </div>
 

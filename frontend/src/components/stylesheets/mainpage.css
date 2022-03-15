@@ -134,7 +134,7 @@
     width: 0;
     height: 0;
     top: 7px; 
-    right: 7px;
+    left: 7px;
     background-color: rgb(48, 160, 175);
     z-index: -2; 
     transition: all ease 1s;

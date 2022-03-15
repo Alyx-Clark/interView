@@ -26,23 +26,6 @@ class MainPage extends React.Component {
                         <h1>Say something else here</h1>
                         <button className='scroll-button2'>SCROLL DOWN FOR MORE INFO</button>
                     </div>
-                    <div className='img-group'>
-                        <div className='img1-container'>
-                            <img>
-                            </img>
-                        </div>
-                        <div className='img2-container'>
-                            <img>
-                            </img>
-                        </div>
-                        <div className='img3-container'>
-                            <img>
-                            </img>
-                        </div>
-                    </div>
-                    <div className='detail-intro'>
-                        <h2>intro to interview</h2>
-                    </div>
                 </section>
 
                 <section className='third-section'>
