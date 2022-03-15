@@ -14,10 +14,10 @@ import MainPage from './main/main_page';
 const App = () => (
     <div>
         <AllModals/>
-        <NavBarContainer />
-        <AuthRoute exact path="/" component={MainPage} />
+        <NavBarContainer/>
         <Switch>
-
+            <AuthRoute exact path="/" component={MainPage} />
+            {/* <ProtectedRoute exact path="/tweets"></ProtectedRoute> */}
         </Switch>
     </div>
 );

@@ -7,7 +7,7 @@ class MainPage extends React.Component {
             <div className='main-page-background'>
                 <section className='main-section'>
                     <div className='slogan-container'>
-                        <h1>Whatever slogan goes here</h1>
+                        <h1>No need to worry with interView</h1>
                         <button className='scroll-button'>SCROLL DOWN FOR MORE INFO</button>
                     </div>
                     <div className='main-img-container'>
@@ -23,7 +23,7 @@ class MainPage extends React.Component {
                         </img>
                     </div>
                     <div className='slogan2-container'>
-                        <h1>Say something else here</h1>
+                        <h2>asfdlkasdj;flkjasd; fasdf asdflj asdfasd asdf asdfasd f asdf asdfalsd fasdlfjas asdfas asdfasd asdfas dfds aasdf sadf afsdfasdf sadf asdf</h2>
                         <button className='scroll-button2'>SCROLL DOWN FOR MORE INFO</button>
                     </div>
                 </section>
