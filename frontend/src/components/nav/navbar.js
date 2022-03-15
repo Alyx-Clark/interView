@@ -37,6 +37,18 @@ class NavBar extends React.Component {
                     </div>
 
                     <div className='user-auth-container'>
+                        {/* <div className='link-container'>
+                            <a>Link1</a>
+                        </div>
+
+                        <div className='link-container'>
+                            <a>Link2</a>
+                        </div>
+
+                        <div className='link-container'>
+                            <a>Link3</a>
+                        </div> */}
+
                         <div className='login-button-container'>
                             <button className="login-button" onClick={() => this.props.open('login')}>Log in</button>
                         </div>

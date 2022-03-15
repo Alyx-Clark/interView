@@ -8,6 +8,7 @@ class MainPage extends React.Component {
                 <section className='main-section'>
                     <div className='slogan-container'>
                         <h1>Whatever slogan goes here</h1>
+                        <button className='scroll-button'>SCROLL DOWN FOR MORE INFO</button>
                     </div>
                     <div className='main-img-container'>
                         {/* <span>img</span> */}
@@ -17,6 +18,13 @@ class MainPage extends React.Component {
                 </section>
 
                 <section className='sec-section'>
+                    <div className='img1-container'>
+                        <img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/interview.png">
+                        </img>
+                    </div>
+                    <div className='slogan2-container'>
+                        <h1>Say something else here</h1>
+                        <button className='scroll-button2'>SCROLL DOWN FOR MORE INFO</button>
                     <div className='img-group'>
                         <div className='img1-container'>
                             <img>
