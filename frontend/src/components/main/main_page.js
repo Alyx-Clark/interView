@@ -25,6 +25,7 @@ class MainPage extends React.Component {
                     <div className='slogan2-container'>
                         <h1>Say something else here</h1>
                         <button className='scroll-button2'>SCROLL DOWN FOR MORE INFO</button>
+                    </div>
                     <div className='img-group'>
                         <div className='img1-container'>
                             <img>
