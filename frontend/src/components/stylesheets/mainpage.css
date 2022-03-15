@@ -25,23 +25,34 @@
     }
 }
 
+.background {
+    height: 100vh;
+    overflow: hidden;
+}
 
 .main-page-background {
     width: 100%;
     height: 100%;
-    /* overflow-y: scroll;
+    overflow-y: scroll;
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory; */
+    scroll-snap-type: y mandatory;
 }
 
 section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
     scroll-snap-align: center;
 }
 
+/* first section */
+
 .main-section {
+    display: flex;
     width: 100%;
     height: 100vh;
-    display: flex;
     justify-content: space-evenly;
 }
 
@@ -100,9 +111,6 @@ section {
     height: 100%;
 }
 
-/* .slogan-container h1 {
-    padding-right: 75px;
-} */
 
 .main-img-container {
     width: 65%;
@@ -122,6 +130,8 @@ section {
     height: 100%;
     object-fit: cover;
 }
+
+/* second section */
 
 .sec-section {
     width: 100%;
@@ -164,9 +174,10 @@ section {
 
 .slogan2-container h2{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 120%;
     margin-bottom: 50px;
+    text-align: right;
 }
 
 
@@ -199,12 +210,58 @@ section {
     color: white;
 }
 
+/* third section */
+
 .third-section {
     width: 100%;
-    height: 50vh;
+    height: 100vh;
+    align-items: center;
 }
+
+
+
+/* fourth section */
 
 .last-section {
     width: 100%;
-    height: 50vh;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-slider {
+    background-color: silver;
+    width: 80%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.sliding-item {
+    position: relative;
+    width: 20%;
+    height: 90%;
+    background-color: red;
+    transition: 1s;
+    border: none;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.sliding-item:hover {
+   transform: scale(1.5);
+}
+
+.sliding-item:focus  {
+   transform: scale(1.5);
+}
+
+.sliding-item img {
+    object-fit: cover;
+}
+.personal-links {
+    display: none;
 }

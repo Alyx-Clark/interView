@@ -33,6 +33,7 @@
     "multer": "^1.4.4",
     "passport": "^0.5.2",
     "passport-jwt": "^4.0.0",
+    "react-helmet": "^6.1.0",
     "validator": "^13.7.0"
   },
   "devDependencies": {
