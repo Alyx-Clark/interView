@@ -6,10 +6,9 @@ const VideoSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
-    video: {
-        data: Buffer,
-        contentType: String,
-        // required: true
+    file: {
+        type: Object,
+        required: true
     },
     views: {
         type: Number,
