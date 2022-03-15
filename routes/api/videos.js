@@ -4,8 +4,11 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 const Video = require('../../models/Video');
-const video = require('../../validations/video');
 const validateVideoInput = require('../../validations/video');
+
+const Feedback = require('../../models/Feedback');
+const validateFeedbackInput = require('../../validations/feedbacks');
+
 
 router.get("/test", (req, res) => res.json({ msg: "This is the videos route" }));
 
@@ -35,14 +38,17 @@ router.get('/:id', (req, res) => {
         );
 });
 
-router.get('/:id/feedback', (req, res) => {
-    res.json({ msg: "This is the feedback for that video" });
-    // Video.findById(req.params.id)
-    //     .then(video => res.json(video))
-    //     .catch(err =>
-    //         res.status(404).json({ novideofound: 'No video found with that ID' })
-    //     );
+// get feedbacks
+
+router.get('/feedbacks/:id', (req, res) => {
+    // res.json({ msg: "This is the feedback for that video" });
+    Feedback.find({ video: req.params.id })
+        .then(feedback => res.json(feedback))
+        .catch(err =>
+            res.status(404).json({ nofeedbackfound: 'No video found with that ID' })
+        );
 });
+
 
 router.get('/:id/rubric', (req, res) => {
     res.json({ msg: "This is the rubric for that video" });
@@ -52,6 +58,9 @@ router.get('/:id/rubric', (req, res) => {
     //         res.status(404).json({ novideofound: 'No video found with that ID' })
     //     );
 });
+
+
+// create video
 
 router.post('/user/:user_id',
     // passport.authenticate('jwt', { session: false }),
@@ -71,6 +80,42 @@ router.post('/user/:user_id',
         });
 
         newVideo.save().then(video => res.json(video));
+    }
+);
+
+// update video
+
+router.patch('/user/:id',
+    // passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+
+        Video.findById(req.params.id)
+            .then(video => {
+                video.user = req.body.user
+                // video: req.body.video
+                video.question = req.body.question
+                video.experience = req.body.experience
+                video.industry = req.body.industry
+
+                video.save().then((video) => res.json(video));
+            })
+            .catch(err =>
+                res.status(404).json({ novideofound: 'No video found with that ID' })
+            );
+    }
+);
+
+// delete video
+
+router.delete('/user/:id',
+    // passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+
+        Video.findByIdAndDelete(req.params.id)
+            .then(video => res.json(video))
+            .catch(err =>
+                res.status(404).json({ novideofound: 'No video found with that ID' })
+            );
     }
 );
 

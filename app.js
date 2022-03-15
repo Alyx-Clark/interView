@@ -6,6 +6,8 @@ const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
 const tweets = require("./routes/api/tweets");
 const videos = require("./routes/api/videos");
+const feedbacks = require("./routes/api/feedbacks");
+const rubrics = require("./routes/api/rubrics");
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
@@ -24,6 +26,8 @@ app.listen(port, () => console.log(`Server is running on port ${port}`));
 app.use("/api/users", users);
 app.use("/api/tweets", tweets);
 app.use("/api/videos", videos);
+app.use("/api/feedbacks", feedbacks);
+app.use("/api/rubrics", rubrics);
 
 app.use(passport.initialize());
 require('./config/passport')(passport);
