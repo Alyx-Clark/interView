@@ -10,7 +10,7 @@ class SignupForm extends React.Component {
             industry: '',
             experience: '', 
             password: '',
-            password2: '',
+            // password2: '',
             errors: {}
         };
 
@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
-            this.props.history.push('/login');
+            this.props.history.push('/tweets');
         }
 
         this.setState({ errors: nextProps.errors })
@@ -38,7 +38,9 @@ class SignupForm extends React.Component {
             email: this.state.email,
             fullname: this.state.fullname,
             password: this.state.password,
-            password2: this.state.password2
+            // password2: this.state.password2, 
+            industry: this.state.industry, 
+            experience: this.state.experience
         };
 
         this.props.signup(user, this.props.history);
@@ -66,8 +68,8 @@ class SignupForm extends React.Component {
 
                     <div className='session-header-container'>
                         <div className='session-header'>
-                            <h1 className='inter'>Inter</h1>
-                            <h1 className='view'>view</h1>
+                            <h1 className='inter'>inter</h1>
+                            <h1 className='view'>View</h1>
                         </div>
                     </div>
 
@@ -85,13 +87,13 @@ class SignupForm extends React.Component {
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
-                        <br />
+                        {/* <br />
                         <input type="password"
                             className='password-input'
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"
-                        />
+                        /> */}
                         <br />
                         <input type="text"
                             className='fullname-input'
