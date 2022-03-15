@@ -11,6 +11,8 @@ import AllModals from "./modal/modal_container";
 import NavBarContainer from './nav/navbar_container';
 import MainPage from './main/main_page';
 
+import ShowFeedbacksContainer from './show/show_feedbacks_container';
+
 const App = () => (
     <div>
         <AllModals/>
@@ -19,6 +21,7 @@ const App = () => (
         <Switch>
 
         </Switch>
+        <ShowFeedbacksContainer />
     </div>
 );
 
