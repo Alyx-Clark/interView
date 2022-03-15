@@ -1,0 +1,18 @@
+.modal-background {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.7);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-child {
+  justify-content:space-evenly;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
