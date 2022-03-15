@@ -1,0 +1,166 @@
+/* color: rgb(20, 100, 80); */
+.login-form-container {
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    width: 440px;
+    background-color: white;
+    text-align: center;
+    padding: 15px; 
+    border-radius: 10px ;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    color: rgb(50, 50, 50);
+}
+
+.login-form {
+    justify-content: center;
+    width: auto;
+    margin-left: 85px;
+    margin-right: 85px;
+}
+
+.session-header-container {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 20px;
+}
+
+.session-header {
+    display: flex;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.close-button {
+    z-index: 1111;
+    height: 40px;
+    width: 40px;
+    right: 0;
+    top: 0;
+    position: absolute; 
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    margin: 10px;
+    padding: 0;
+    cursor: pointer;
+}
+.close-button span {
+    color: rgb(42, 43, 42);
+    font-size: 40px;
+}
+
+.close-button:hover {
+    background-color: rgba(0, 0,0, 0.1);
+}
+
+.login-form input {
+    width: 235px;
+    height: 22px;
+    border-radius: 5px;
+    border-color: rgb(216, 215, 215); 
+    border-style: solid;
+    padding: 12px;
+    margin: 7px;
+    font-size: 16px;
+}
+
+.login-form input:hover {
+    border-color: rgb(179, 176, 176); 
+}
+
+.login-form input:focus {
+    outline: 3px solid rgb(113, 236, 245);
+}
+
+
+.submit-button {
+    width: 260px;
+    height: 40px;
+    border-radius: 25px;
+    border: none;  
+    background-color: rgb(20, 100, 80);;
+    padding: 12px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: 550;
+    color: white;
+    margin-top: 7px; 
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: rgb(17, 83, 67);
+}
+
+.or {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 10px;
+}
+
+.demo-login {
+    width: 260px;
+    height: 40px;
+    border-radius: 25px;
+    border: solid 1.5px;
+    border-color: rgb(20, 68, 100);;
+    background-color: white;
+    margin-top: 7px; 
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(20, 100, 80);
+}
+
+.demo-login:hover {
+    border: solid 2px;
+    background-color: rgba(20, 100, 80, 0.2);
+    border-color: rgb(20, 68, 80);
+}
+
+.otherwise {
+    border: none;
+    background-color: transparent;
+    font-weight: 550;
+    font: 13px;
+    cursor: pointer;
+    color: rgb(50, 50, 50);
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.signup-form-container {
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    width: 440px;
+    background-color: white;
+    text-align: center;
+    padding: 15px; 
+    border-radius: 10px ;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    color: rgb(50, 50, 50);
+}
+
+.signup-form input {
+    width: 235px;
+    height: 22px;
+    border-radius: 5px;
+    border-color: rgb(216, 215, 215); 
+    border-style: solid;
+    padding: 12px;
+    margin: 7px;
+    font-size: 16px;
+}
+
+.signup-form input:hover {
+    border-color: rgb(179, 176, 176); 
+}
+
+.signup-form input:focus {
+    outline: 3px solid rgb(113, 236, 245);
+}

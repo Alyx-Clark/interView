@@ -1,0 +1,58 @@
+.main-page-background {
+    width: 100%;
+    height: 300vh;
+}
+
+.main-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.slogan-container {
+    width: 35%;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 70px;
+    margin-top: 11%;
+    margin-bottom: 25%;
+    padding-left: 100px;
+    line-height: 150%;
+    text-align: left;
+    color: rgb(17, 87, 69);
+}
+
+/* .slogan-container h1 {
+    padding-right: 75px;
+} */
+.main-img-container {
+    width: 65%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-right: 100px;
+    margin-top: 30px;
+}
+
+.main-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sec-section {
+    width: 100%;
+    height: 100vh;
+}
+
+.third-section {
+    width: 100%;
+    height: 50vh;
+}
+
+.last-section {
+    width: 100%;
+    height: 50vh;
+}
