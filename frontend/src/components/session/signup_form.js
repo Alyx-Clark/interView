@@ -63,13 +63,34 @@ class SignupForm extends React.Component {
                     <button onClick={this.props.close} className="close-button">
                         <span aria-hidden="true">&times;</span>
                     </button>
+
+                    <div className='session-header-container'>
+                        <div className='session-header'>
+                            <h1 className='inter'>Inter</h1>
+                            <h1 className='view'>view</h1>
+                        </div>
+                    </div>
+
                     <div>
-                        <br />
                         <input type="text"
                             className='email-input'
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
+                        />
+                        <br />
+                        <input type="password"
+                            className='password-input'
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            placeholder="Password"
+                        />
+                        <br />
+                        <input type="password"
+                            className='password-input'
+                            value={this.state.password2}
+                            onChange={this.update('password2')}
+                            placeholder="Confirm Password"
                         />
                         <br />
                         <input type="text"
@@ -108,24 +129,11 @@ class SignupForm extends React.Component {
                             <option value="option4" />
                             <option value="option5" />
                         </datalist>
-
-                        <br />
-                        <input type="password"
-                            className='password-input'
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        <br />
-                        <input type="password"
-                            className='password-input'
-                            value={this.state.password2}
-                            onChange={this.update('password2')}
-                            placeholder="Confirm Password"
-                        />
                         <br />
                         <button className='submit-button' type="submit" value="Submit" >Sign up</button>
                         {this.renderErrors()}
+                        <h3 className='or'>OR</h3>
+                        <button className='demo-login'>Demo Login</button>
 
                         <button className="otherwise" onClick={this.props.login}>
                             Already have an account? Log in here!

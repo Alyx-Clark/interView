@@ -62,6 +62,14 @@ class LoginForm extends React.Component {
                     <button onClick={this.props.close} className="close-button">
                         <span aria-hidden="true">&times;</span>
                     </button>
+
+                    <div className='session-header-container'>
+                        <div className='session-header'>
+                            <h1 className='inter'>Inter</h1>
+                            <h1 className='view'>view</h1>
+                        </div>
+                    </div>
+
                     <div>
                         <input type="text"
                             className='email-input'
@@ -79,11 +87,13 @@ class LoginForm extends React.Component {
                         <br />
                         <button className='submit-button' type="submit" value="Submit">Log in</button>
                         {this.renderErrors()}
-                        <br/>
-                        <button></button>
+                        <h3 className='or'>OR</h3>
+                        <button className='demo-login'>Demo Login</button>
 
                         <button className="otherwise" onClick={this.props.signup}>
-                            Don't have an account? Sign up for free!
+                            Don't have an account? 
+                            <br/>
+                            Sign up for free!
                         </button>
                     </div>
                 </form>
