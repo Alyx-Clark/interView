@@ -60,8 +60,7 @@
 .feedback {
     display: flex; 
     flex-direction: row;
-    justify-content: space-evenly;
-    /* background-color: rgb(215, 249, 250); */
+    justify-content: left;
 }
 
 .initial-profile {
@@ -81,7 +80,7 @@
 }
 
 .feedback-items-container {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     padding: 20px;
     font-size: 14px;
@@ -99,47 +98,46 @@
     float: right; 
     color: black;
     font-size: 11px;
+    margin-right: 10px;
+}
+
+.feedback:hover .feedback-button-wrapper {
+    opacity: 1;
 }
 
 .feedback-button-wrapper {
     position: absolute;
-    right: 0;
+    right: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 10px;
-    border: solid;
     width: 5%;
-    height: 10%;
+    height: 14%;
+    opacity: 0;
 }
 
-.feedback-button-wrapper:hover .abc {
-    opacity: 1;
-}
-
-.delete-dropdown {
-    position: absolute;
-    border: none;
-    border-radius: 100%;
-    width: 40px;
-    height: 40px;
-}
 
 .feedback-buttons {
     display: flex;
     flex-direction: column;
 }
 
-
 .feedback-buttons button {
-    width: 50px;
+    width: 60px;
     height: 30px;
     border: none;
     cursor: pointer;
-    opacity: 0;
+    z-index: 99;
+    background-color: #B0C4DE;
+    color: white;
+    margin: 5px;
+    border-radius: 10px;
 }
 
-
+.feedback-buttons button:hover {
+    background-color: #94b5e0;
+}
 
 .show {
     display: block;
