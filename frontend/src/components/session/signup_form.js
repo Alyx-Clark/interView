@@ -43,7 +43,17 @@ class SignupForm extends React.Component {
             experience: this.state.experience
         };
 
-        this.props.signup(user, this.props.history);
+        this.props.signup(user, this.props.history).then(this.props.close);
+    }
+
+    handleDemoUser(e) {
+        e.preventDefault();
+        const demo = {
+            email: "apple@email.com",
+            password: "password",
+        }
+        this.setState(demo);
+        this.props.loginDemo(demo).then(this.props.close);
     }
 
     renderErrors() {
@@ -110,11 +120,15 @@ class SignupForm extends React.Component {
                             list="industry"
                         />  
                         <datalist id="industry">
-                            <option value="option1"/>
-                            <option value="option2"/>
-                            <option value="option3"/>
-                            <option value="option4"/>
-                            <option value="option5"/>
+                            <option value="Communication Services"/>
+                            <option value="Consumer Discretionary"/>
+                            <option value="Energy"/>
+                            <option value="Financials"/>
+                            <option value="Health Care"/>
+                            <option value="Information Technology" />
+                            <option value="Materials" />
+                            <option value="Real Estate" />
+                            <option value="Utilities" />
                         </datalist>
                         <br/>
                         <input type="text"
@@ -125,17 +139,17 @@ class SignupForm extends React.Component {
                             list="experience"
                         />
                         <datalist id="experience">
-                            <option value="option1" />
-                            <option value="option2" />
-                            <option value="option3" />
-                            <option value="option4" />
-                            <option value="option5" />
+                            <option value="Entry-level" />
+                            <option value="Intermediate/experienced level" />
+                            <option value="First-level management" />
+                            <option value="Mid-level management" />
+                            <option value="Senior/Executive management" />
                         </datalist>
                         <br />
                         <button className='submit-button' type="submit" value="Submit" >Sign up</button>
                         {this.renderErrors()}
                         <h3 className='or'>OR</h3>
-                        <button className='demo-login'>Demo Login</button>
+                        <button className='demo-login' onClick={e => this.handleDemoUser(e)}>Demo log in</button>
 
                         <button className="otherwise" onClick={this.props.login}>
                             Already have an account? Log in here!
