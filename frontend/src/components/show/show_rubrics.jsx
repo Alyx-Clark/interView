@@ -6,7 +6,7 @@ class ShowRubrics extends React.Component {
     }
 
     componentDidMount() {
-        debugger;
+        // debugger;
         // this.props.fetchVideoRubrics('622fee0353e5b6c175fd7611');
         this.props.fetchVideoRubrics(this.props.videoId);
     }
@@ -23,7 +23,7 @@ class ShowRubrics extends React.Component {
             contentRating = 0;
             voiceRating = 0;
         } else {
-            debugger;
+            // debugger;
             let length = this.props.rubrics.data.length 
             this.props.rubrics.data.forEach(rubric => professionalismRating += rubric.professionalism);
             professionalismRating /= length;
@@ -42,7 +42,7 @@ class ShowRubrics extends React.Component {
             voiceRating = voiceRating.toFixed();
         };
 
-        debugger;
+        // debugger;
 
         return (
             <div className="rubric">
@@ -56,7 +56,3 @@ class ShowRubrics extends React.Component {
 }
 
 export default ShowRubrics;
-
-// source
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Division_assignment

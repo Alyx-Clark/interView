@@ -11,20 +11,17 @@ import "./stylesheets/show_feedback.css"
 import AllModals from "./modal/modal_container";
 import NavBarContainer from './nav/navbar_container';
 import MainPage from './main/main_page';
+import VideoShowPage from './show/show_video';
 
-import ShowFeedbacksContainer from './show/show_feedbacks_container';
-import RubricsContainer from './show/show_rubrics_container';
 
 const App = () => (
     <div>
         <AllModals/>
-        {/* <NavBarContainer/> */}
+        <NavBarContainer/>
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
-            {/* <ProtectedRoute exact path="/tweets"></ProtectedRoute> */}
-            <ProtectedRoute exact path="/rubrics/:videoId" component={RubricsContainer} />
+            <ProtectedRoute exact path="/videos/:videoId" component={VideoShowPage} />
         </Switch>
-        <ShowFeedbacksContainer />
     </div>
 );
 
