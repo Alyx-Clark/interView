@@ -10,7 +10,8 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     logout: () => dispatch(logout()), 
-    open: modal => dispatch(ModalControl.open(modal))
+    open: modal => dispatch(ModalControl.open(modal)), 
+    
 })
 
 export default connect( mSTP, mDTP)(NavBar);

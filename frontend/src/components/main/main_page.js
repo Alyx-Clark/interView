@@ -1,74 +1,103 @@
 import React from 'react';
 
 class MainPage extends React.Component {
+    state = { showing1: false,
+        showing2: false,
+        showing3: false,
+        showing4: false
+}
 
     render() {
+        const {showing1, showing2, showing3, showing4} = this.state
         return (
-            <div className='main-page-background'>
-                <section className='main-section'>
-                    <div className='slogan-container'>
-                        <h1>Whatever slogan goes here</h1>
-                        <button className='scroll-button'>SCROLL DOWN FOR MORE INFO</button>
-                    </div>
-                    <div className='main-img-container'>
-                        {/* <span>img</span> */}
-                        <img className='main-img' src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/teamwork-illustration.png">
-                        </img>
-                    </div>
-                </section>
+            <div className='background'>
+                <div className='main-page-background'>
+                    <section className='main-section'>
+                        <div className='slogan-container'>
+                            <h1>No need to worry with interView</h1>
+                            <button className='scroll-button'>SCROLL DOWN FOR MORE INFO</button>
+                        </div>
+                        <div className='main-img-container'>
+                            {/* <span>img</span> */}
+                            <img className='main-img' src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/teamwork-illustration.png">
+                            </img>
+                        </div>
+                    </section>
 
-                <section className='sec-section'>
-                    <div className='img1-container'>
-                        <img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/interview.png">
-                        </img>
-                    </div>
-                    <div className='slogan2-container'>
-                        <h1>Say something else here</h1>
-                        <button className='scroll-button2'>SCROLL DOWN FOR MORE INFO</button>
-                    </div>
-                </section>
+                    <section className='sec-section'>
+                        <div className='img1-container'>
+                            <img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/interview.png">
+                            </img>
+                        </div>
+                        <div className='slogan2-container'>
+                            <h1>Time to pass the interview</h1>
+                            <h2>interView is a video platform where users can practice their interviewing skills and elicit feedbacks.
+                                interView seeks to make the interviewing process less scary by allowing users to record interview responses to the top behavioral questions
+                                and receive constructive feedback on how they did with a score based on a grading rubric.
+                            </h2>
+                            <button className='scroll-button2'>SCROLL DOWN FOR MORE INFO</button>
+                        </div>
+                    </section>
 
-                <section className='third-section'>
-                    <div className='img-slider'>
-                        <div className='sliding-item'>
-                            <img>
-                            </img>
+                    <section className='third-section'>
+                       
+                        <div className='extra-intro'>
+                            <h2>whatever you wanna say here</h2>
                         </div>
-                        <div className='sliding-item'>
-                            <img>
-                            </img>
-                        </div>
-                        <div className='sliding-item'>
-                            <img>
-                            </img>
-                        </div>
-                        <div className='sliding-item'>
-                            <img>
-                            </img>
-                        </div>
-                        <div className='sliding-item'>
-                            <img>
-                            </img>
-                        </div>
-                        <div className='sliding-item'>
-                            <img>
-                            </img>
-                        </div>
-                    </div>
-                    <div className='extra-intro'>
-                        <h2>whatever you wanna say here</h2>
-                    </div>
-                </section>
+                    </section>
 
-                <footer className='last-section'>
-                    <div className='rotating'>
-                        <img>
-                        </img>
-                    </div>
-                    <div className='personal-links'>
-                        <span>personal links go here</span>
-                    </div>
-                </footer>
+                    <section className='last-section'>
+                        <div className='slogan3-container' >
+                            <h1>ABOUT US</h1>
+                        </div>
+                        <div className='img-slider'>
+                            <button className='sliding-item' onFocus={() => this.setState({ showing1: true })}>
+                                <img src="Alex.jpg">
+                                </img>
+                                <div className="personal-links" >
+                                    <span>Alex Clark</span>
+                                    <br/>
+                                    <a href='https://www.linkedin.com/in/alex-b-clark-wrightstate/'>LinkedIn</a>
+                                    <br/>
+                                    <a href='https://github.com/Alyx-Clark'>Github</a>
+                                </div>
+                            </button>
+                            <button className='sliding-item' onFocus={() => this.setState({ showing2: true })}>
+                                <img src="Ian.jpeg">
+                                </img>
+                                <div className="personal-links">
+                                    <span>Ian Farr</span>
+                                    <br/>
+                                    <a href='https://www.linkedin.com/in/ian-farr/'>LinkedIn</a>
+                                    <br />
+                                    <a href='https://github.com/IanFarr'>Github</a>
+                                </div>
+                            </button>
+                            <button className='sliding-item' onFocus={() => this.setState({ showing3: true })}>
+                                <img src="Jonathan.jpg">
+                                </img>
+                                <div className="personal-links">
+                                    <span>Jonathan Kim</span>
+                                    <br />
+                                    <a href='https://github.com/hwkcode'>LinkedIn</a>
+                                    <br />
+                                    <a href='https://github.com/hwkcode'>Github</a>
+                                </div>
+                            </button>
+                            <button className='sliding-item' onFocus={() => this.setState({ showing4: true })}>
+                                <img src="Qien.jpg">
+                                </img>
+                                <div className="personal-links">
+                                    <span>Qien Gao</span>
+                                    <br />
+                                    <a href="https://github.com/qienzgao">LinkedIn</a>
+                                    <br />
+                                    <a href="https://www.linkedin.com/in/qien-gao-1390071a7/">Github</a>
+                                </div>
+                            </button>
+                        </div>
+                    </section>
+                </div>
             </div>
         );
     }

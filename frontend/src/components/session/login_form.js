@@ -40,7 +40,17 @@ class LoginForm extends React.Component {
             password: this.state.password
         };
 
-        this.props.login(user);
+        this.props.login(user).then(this.props.close);
+    }
+
+    handleDemoUser(e) {
+        e.preventDefault();
+        const demo = {
+            email: "apple@email.com",
+            password: "password",
+        }
+        this.setState(demo);
+        this.props.login(demo).then(this.props.close);
     }
 
     renderErrors() {
@@ -88,7 +98,7 @@ class LoginForm extends React.Component {
                         <button className='submit-button' type="submit" value="Submit">Log in</button>
                         {this.renderErrors()}
                         <h3 className='or'>OR</h3>
-                        <button className='demo-login'>Demo Login</button>
+                        <button className='demo-login' onClick={e => this.handleDemoUser(e)}>Demo log in</button>
 
                         <button className="otherwise" onClick={this.props.signup}>
                             Don't have an account? 
