@@ -2,31 +2,38 @@ import React from 'react';
 import ShowFeedbackIndexItem from './show_feedbacks_item';
 
 class VideoShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      positiveShow: false, 
+      negativeShow: false
+    }
+  }
+
+  positiveSwitch(){
+    this.setState({ positiveShow: true });
+    this.setState({ negativeShow: false });
+  }
+
+  negativeSwitch(){
+    this.setState({ negativeShow: true});
+    this.setState({ positiveShow: false })
+  }
 
   componentDidMount() {
     this.props.fetchVideoFeedbacks('622fee0353e5b6c175fd7611')
   }
 
   render() {
-    var positiveShow = 'unshow';
-    var negativeShow = 'unshow';
-
-    const showPositive = () => {
-      positiveShow = 'show';
-      negativeShow = 'unshow'
-  }
-
-    const showNegative = () => {
-      negativeShow = 'show'; 
-      positiveShow = 'unshow'
-    }
+    let positiveShow = this.state.positiveShow ? "show" : "unshow";
+    let negativeShow = this.state.negativeShow ? "show" : "unshow";
 
     if (this.props.feedbacks === {}) return null;
     return (
       <div className='feedbacks-container'>
         <div className='feedback-class'>
-          <button className="positive-title" onClick={showPositive}>YOU DID GREAT!</button>
-          <button className='negative-title' onClick={showNegative}>STILL NEED TO IMPROVE</button>
+          <button className="positive-title" onClick={this.positiveSwitch.bind(this)}>YOU DID GREAT!</button>
+          <button className='negative-title' onClick={this.negativeSwitch.bind(this)}>STILL NEED TO IMPROVE</button>
         </div>
         
         {(Object.keys(this.props.feedbacks)).map(key => (
