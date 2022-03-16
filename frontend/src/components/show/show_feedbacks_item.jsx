@@ -28,10 +28,19 @@ class ShowFeedbackIndexItem extends React.Component {
   render() {
     return (
       <div className="feedback">
-        <p className="feedback-positive">{this.props.positive}</p>
-        <p className="feedback-negative">{this.props.negative}</p>
-        <p className="feedback-date">{moment(this.props.date).format('MMMM Do YYYY')}</p>
-        {this.renderOptionButtons()}
+
+        <div className={`positive-container ${this.props.positiveShow}`}>
+          <p className="feedback-positive">{this.props.positive}</p>
+          <p className="feedback-date">Feedback on {moment(this.props.date).format('MMMM Do YYYY')}</p>
+          {this.renderOptionButtons()}
+        </div>
+
+        <div className={`negative-container ${this.props.negativeShow}`}>
+          <p className="feedback-negative">{this.props.negative}</p>
+          <p className="feedback-date">Feedback on{moment(this.props.date).format('MMMM Do YYYY')}</p>
+          {this.renderOptionButtons()}
+        </div>
+
       </div>
     )
   }

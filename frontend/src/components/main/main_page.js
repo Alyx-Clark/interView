@@ -1,14 +1,8 @@
 import React from 'react';
 
 class MainPage extends React.Component {
-    state = { showing1: false,
-        showing2: false,
-        showing3: false,
-        showing4: false
-}
 
     render() {
-        const {showing1, showing2, showing3, showing4} = this.state
         return (
             <div className='background'>
                 <div className='main-page-background'>
@@ -51,7 +45,7 @@ class MainPage extends React.Component {
                             <h1>ABOUT US</h1>
                         </div>
                         <div className='img-slider'>
-                            <button className='sliding-item' onFocus={() => this.setState({ showing1: true })}>
+                            <button className='sliding-item' >
                                 <img src="Alex.jpg">
                                 </img>
                                 <div className="personal-links" >
@@ -62,7 +56,7 @@ class MainPage extends React.Component {
                                     <a href='https://github.com/Alyx-Clark'>Github</a>
                                 </div>
                             </button>
-                            <button className='sliding-item' onFocus={() => this.setState({ showing2: true })}>
+                            <button className='sliding-item' >
                                 <img src="Ian.jpeg">
                                 </img>
                                 <div className="personal-links">
@@ -73,7 +67,7 @@ class MainPage extends React.Component {
                                     <a href='https://github.com/IanFarr'>Github</a>
                                 </div>
                             </button>
-                            <button className='sliding-item' onFocus={() => this.setState({ showing3: true })}>
+                            <button className='sliding-item' >
                                 <img src="Jonathan.jpg">
                                 </img>
                                 <div className="personal-links">
@@ -84,7 +78,7 @@ class MainPage extends React.Component {
                                     <a href='https://github.com/hwkcode'>Github</a>
                                 </div>
                             </button>
-                            <button className='sliding-item' onFocus={() => this.setState({ showing4: true })}>
+                            <button className='sliding-item'>
                                 <img src="Qien.jpg">
                                 </img>
                                 <div className="personal-links">
