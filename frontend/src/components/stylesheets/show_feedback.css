@@ -18,14 +18,14 @@
     flex-direction: row;  
     /* background-color: rgb(215, 249, 250); */
     padding: none;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .feedback-class button {
     width: 40%;
     height: 100%;
     text-align: center;
-    padding: 10px;
+    padding: 10px 0 10px 0;
     background-color: white;
     cursor: pointer;
     border-bottom: solid 5px;
@@ -34,6 +34,14 @@
     font-weight: 600;
     color: gray;
     margin-bottom: 10px;
+}
+
+.positive-title {
+    margin-left: 20px;
+}
+
+.negative-title {
+    margin-right: 20px;
 }
 
 .feedback-class button:focus {

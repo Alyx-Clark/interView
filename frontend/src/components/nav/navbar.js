@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-
+import FaceIcon from '@mui/icons-material/Face';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -22,13 +24,41 @@ class NavBar extends React.Component {
                         {/* <img/> */}
                         <div className='nav-header'>
                             <h1 className='inter'>inter</h1>
-                            <h1 className='view'>View</h1>
+                            <Link to="/" className='home-link'><h1 className='view'>View</h1></Link>
                         </div>
                     </div>
-                    <div className='login-button-container'>
-                        <Link to="/">
-                            <button className="login-button" onClick={this.logoutUser}>Logout</button>
-                        </Link>
+
+                    <div className='search-bar-container'>
+                        <input className="search-bar" type="text" placeholder='Search' />
+                    </div>
+
+                    <div className='functional-buttons-container'>
+                        <div className='load-button-wrapper'>
+                            <div className='load-button-container'>
+                                <button className='profile-button'>
+                                    <FaceIcon fontSize='large' color="action"/>
+                                </button>
+                            </div>
+                            <span className='button-function'>Profile</span>
+                        </div>
+
+                        <div className='load-button-wrapper'>
+                            <div className='load-button-container'>
+                                <button className='create-button'><AddCircleOutlineIcon fontSize='large' color='action'/></button>
+                            </div>
+                            <span className='button-function'>Create View</span>
+                        </div>
+
+                        <div className='load-button-wrapper'>
+                            <div className='load-button-container'>
+                                <Link to="/">
+                                    <button className="logout-button" onClick={this.logoutUser}>
+                                        <ExitToAppIcon fontSize='large' color="action" />
+                                    </button>
+                                </Link>
+                            </div>
+                            <span className='button-function'>Log Out</span>
+                        </div>
                     </div>
                 </div>
             );
@@ -37,7 +67,6 @@ class NavBar extends React.Component {
                 <div className='nav-bar-container'>
 
                     <div className='nav-header-container'>
-                        {/* <img/> */}
                         <div className='nav-header'>
                             <h1 className='inter'>inter</h1>
                             <h1 className='view'>View</h1>
@@ -45,18 +74,6 @@ class NavBar extends React.Component {
                     </div>
 
                     <div className='user-auth-container'>
-                        {/* <div className='link-container'>
-                            <a>Link1</a>
-                        </div>
-
-                        <div className='link-container'>
-                            <a>Link2</a>
-                        </div>
-
-                        <div className='link-container'>
-                            <a>Link3</a>
-                        </div> */}
-
                         <div className='login-button-container'>
                             <button className="login-button" onClick={() => this.props.open('login')}>Log in</button>
                         </div>

@@ -73,7 +73,7 @@
 }
 
 .login-form input:focus {
-    outline: 3px solid rgb(113, 236, 245);
+    outline: 3px solid rgb(174, 206, 255);
 }
 
 
@@ -163,5 +163,5 @@
 }
 
 .signup-form input:focus {
-    outline: 3px solid rgb(113, 236, 245);
+    outline: 3px solid rgb(174, 206, 255);
 }
