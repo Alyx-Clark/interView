@@ -61,8 +61,8 @@ section {
     text-align: center;
     margin-top: 11%;
     margin-bottom: 25%;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 7%;
+    padding-right: 7%;
     text-align: left;
     color: rgb(17, 87, 69);
 }
@@ -81,7 +81,7 @@ section {
 
 .scroll-button {
     background-color: transparent;
-    padding: 25px 40px;
+    padding: 5% 10%;
     border: 2px solid black;
     border-radius: 15px;
     position: relative; 
@@ -159,8 +159,8 @@ section {
     width: 35%;
     margin-top: 25%;
     margin-bottom: 25%;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 7%;
+    padding-right: 7%;
     text-align: right;
     color: rgb(33, 101, 110);
 }
@@ -183,7 +183,7 @@ section {
 
 .scroll-button2 {
     background-color: transparent;
-    padding: 25px 40px;
+    padding: 4% 8%;
     border: 2px solid black;
     /* border-radius: 15px; */
     position: relative; 
