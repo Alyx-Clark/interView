@@ -47,29 +47,53 @@ class MainPage extends React.Component {
                     </section>
 
                     <section className='last-section'>
-                        <div className='rotating' >
-                            <h1>Contributers</h1>
+                        <div className='slogan3-container' >
+                            <h1>ABOUT US</h1>
                         </div>
                         <div className='img-slider'>
                             <button className='sliding-item' onFocus={() => this.setState({ showing1: true })}>
-                                <img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/smile.png">
+                                <img src="Alex.jpg">
                                 </img>
-                                <div className="personal-links" style={{ display: (showing1 ? 'block' : 'none') }}>LINKS</div>
+                                <div className="personal-links" >
+                                    <span>Alex Clark</span>
+                                    <br/>
+                                    <a href='https://www.linkedin.com/in/alex-b-clark-wrightstate/'>LinkedIn</a>
+                                    <br/>
+                                    <a href='https://github.com/Alyx-Clark'>Github</a>
+                                </div>
                             </button>
                             <button className='sliding-item' onFocus={() => this.setState({ showing2: true })}>
-                                <img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/smile.png">
+                                <img src="Ian.jpeg">
                                 </img>
-                                <div style={{ display: (showing2 ? 'block' : 'none') }}>LINKS</div>
+                                <div className="personal-links">
+                                    <span>Ian Farr</span>
+                                    <br/>
+                                    <a href='https://www.linkedin.com/in/ian-farr/'>LinkedIn</a>
+                                    <br />
+                                    <a href='https://github.com/IanFarr'>Github</a>
+                                </div>
                             </button>
                             <button className='sliding-item' onFocus={() => this.setState({ showing3: true })}>
-                                <img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/smile.png">
+                                <img src="Jonathan.jpg">
                                 </img>
-                                <div style={{ display: (showing3 ? 'block' : 'none') }}>LINKS</div>
+                                <div className="personal-links">
+                                    <span>Jonathan Kim</span>
+                                    <br />
+                                    <a href='https://github.com/hwkcode'>LinkedIn</a>
+                                    <br />
+                                    <a href='https://github.com/hwkcode'>Github</a>
+                                </div>
                             </button>
                             <button className='sliding-item' onFocus={() => this.setState({ showing4: true })}>
-                                <img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/smile.png">
+                                <img src="Qien.jpg">
                                 </img>
-                                <div style={{ display: (showing4 ? 'block' : 'none') }}>LINKS</div>
+                                <div className="personal-links">
+                                    <span>Qien Gao</span>
+                                    <br />
+                                    <a href="https://github.com/qienzgao">LinkedIn</a>
+                                    <br />
+                                    <a href="https://www.linkedin.com/in/qien-gao-1390071a7/">Github</a>
+                                </div>
                             </button>
                         </div>
                     </section>
