@@ -6,8 +6,9 @@ class ShowRubrics extends React.Component {
     }
 
     componentDidMount() {
-        debugger
-        this.props.fetchVideoRubrics('622fee0353e5b6c175fd7611');
+        debugger;
+        // this.props.fetchVideoRubrics('622fee0353e5b6c175fd7611');
+        this.props.fetchVideoRubrics(this.props.videoId);
     }
 
     render() {
@@ -16,48 +17,46 @@ class ShowRubrics extends React.Component {
         let contentRating = 0;
         let voiceRating = 0;
 
-        if (this.props.rubrics === undefined || this.props.rubrics.length === 0 || this.props.rubrics.length === undefined) {
+        if (this.props.rubrics.data === undefined || this.props.rubrics.data.length === 0 || this.props.rubrics.data.length === undefined) {
             professionalismRating = 0;
             confidenceRating = 0;
             contentRating = 0;
             voiceRating = 0;
         } else {
-            this.props.rubrics.forEach(function (rubric) {
-                professionalismRating += rubric.professionalism;
-                confidenceRating += rubric.confidence;
-                contentRating += rubric.content;
-                voiceRating += rubric.voice;
+            debugger;
+            let length = this.props.rubrics.data.length 
+            this.props.rubrics.data.forEach(rubric => professionalismRating += rubric.professionalism);
+            professionalismRating /= length;
+            professionalismRating = professionalismRating.toFixed();
 
-                professionalismRating /= this.props.rubrics.length;
-                professionalismRating = professionalismRating.toFixed();
-        
-                confidenceRating /= this.props.rubrics.length;
-                confidenceRating = confidenceRating.toFixed();
-        
-                contentRating /= this.props.rubrics.length;
-                contentRating = contentRating.toFixed();
-        
-                voiceRating /= this.props.rubrics.length;
-                voiceRating = voiceRating.toFixed();
-            });
+            this.props.rubrics.data.forEach(rubric => confidenceRating += rubric.confidence);
+            confidenceRating /= length;
+            confidenceRating = confidenceRating.toFixed();
+
+            this.props.rubrics.data.forEach(rubric => contentRating += rubric.content);
+            contentRating /= length;
+            contentRating = contentRating.toFixed();
+
+            this.props.rubrics.data.forEach(rubric => voiceRating += rubric.voice);
+            voiceRating /= length;
+            voiceRating = voiceRating.toFixed();
         };
 
-        debugger
+        debugger;
 
         return (
             <div className="rubric">
-                <div className="professionalism-rating">professionalismRating</div>
-                <div className="confidence-rating">confidenceRating</div>
-                <div className="content-rating">contentRating</div>
-                <div className="voice-rating">voiceRating</div>
+                <div className="professionalism-rating">Professionalism: {professionalismRating}</div>
+                <div className="confidence-rating">Confidence: {confidenceRating}</div>
+                <div className="content-rating">Content: {contentRating}</div>
+                <div className="voice-rating">Voice: {voiceRating}</div>
             </div>
-        )
+        );
     }
 }
 
 export default ShowRubrics;
 
 // source
-// https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tofixed2
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Division_assignment

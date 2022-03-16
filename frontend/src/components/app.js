@@ -18,11 +18,11 @@ import RubricsContainer from './show/show_rubrics_container';
 const App = () => (
     <div>
         <AllModals/>
-        <NavBarContainer/>
+        {/* <NavBarContainer/> */}
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
             {/* <ProtectedRoute exact path="/tweets"></ProtectedRoute> */}
-            <ProtectedRoute exact path="/testrubrics" component={RubricsContainer} />
+            <ProtectedRoute exact path="/rubrics/:videoId" component={RubricsContainer} />
         </Switch>
         <ShowFeedbacksContainer />
     </div>
