@@ -5,7 +5,7 @@ class VideoShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      positiveShow: false, 
+      positiveShow: true, 
       negativeShow: false
     }
   }
@@ -35,22 +35,23 @@ class VideoShow extends React.Component {
           <button className="positive-title" onClick={this.positiveSwitch.bind(this)}>YOU DID GREAT!</button>
           <button className='negative-title' onClick={this.negativeSwitch.bind(this)}>STILL NEED TO IMPROVE</button>
         </div>
-        
-        {(Object.keys(this.props.feedbacks)).map(key => (
-          <ShowFeedbackIndexItem
-            positive={this.props.feedbacks[key].positive}
-            negative={this.props.feedbacks[key].negative}
-            feedbackerId={this.props.feedbacks[key].user}
-            feedbackId={this.props.feedbacks[key]._id}
-            videoId={this.props.feedbacks[key].video}
-            date={this.props.feedbacks[key].date}
-            key={this.props.feedbacks[key]._id}
-            deleteVideoFeedbacks={this.props.deleteVideoFeedbacks}
-            currentUser={this.props.currentUser}
-            positiveShow={positiveShow}
-            negativeShow={negativeShow}
-          />
-        ))}
+        <div className='feedback-index-item-container'>
+          {(Object.keys(this.props.feedbacks)).map(key => (
+            <ShowFeedbackIndexItem
+              positive={this.props.feedbacks[key].positive}
+              negative={this.props.feedbacks[key].negative}
+              feedbackerId={this.props.feedbacks[key].user}
+              feedbackId={this.props.feedbacks[key]._id}
+              videoId={this.props.feedbacks[key].video}
+              date={this.props.feedbacks[key].date}
+              key={this.props.feedbacks[key]._id}
+              deleteVideoFeedbacks={this.props.deleteVideoFeedbacks}
+              currentUser={this.props.currentUser}
+              positiveShow={positiveShow}
+              negativeShow={negativeShow}
+            />
+          ))}
+        </div>
       </div>
     )
   }
