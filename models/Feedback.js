@@ -2,9 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const FeedbackSchema = new Schema({
-  user: {
+  userId: {
     type: Schema.Types.ObjectId,
     ref: 'users'
+  },
+  userFullName: {
+    type: String,
+    required: true
   },
   video: {
     type: Schema.Types.ObjectId,

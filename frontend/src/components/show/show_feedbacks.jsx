@@ -32,7 +32,7 @@ class VideoShow extends React.Component {
     return (
       <div className='feedbacks-container'>
         <div className='feedback-class'>
-          <button className="positive-title" onClick={this.positiveSwitch.bind(this)}>YOU DID GREAT!</button>
+          <button className="positive-title" onClick={this.positiveSwitch.bind(this)}>YOU DID GREAT ON THEM</button>
           <button className='negative-title' onClick={this.negativeSwitch.bind(this)}>STILL NEED TO IMPROVE</button>
         </div>
         <div className='feedback-index-item-container'>
@@ -40,7 +40,8 @@ class VideoShow extends React.Component {
             <ShowFeedbackIndexItem
               positive={this.props.feedbacks[key].positive}
               negative={this.props.feedbacks[key].negative}
-              feedbackerId={this.props.feedbacks[key].user}
+              feedbackerId={this.props.feedbacks[key].userId}
+              feedbackerFullName={this.props.feedbacks[key].userFullName}
               feedbackId={this.props.feedbacks[key]._id}
               videoId={this.props.feedbacks[key].video}
               date={this.props.feedbacks[key].date}
