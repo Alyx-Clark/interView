@@ -3,15 +3,15 @@ import PostVideoForm from './post_video_form'
 import { createVideo } from "../../actions/video_actions";
 
 const mSTP = state => {
+  console.log(state)
   return {
     currentUser: state.session.user,
-    errors: Object.values(state.errors.videos)
+    errors: Object.values(state.errors.video)
   }
 }
-
 const mDTP = dispatch => {
   return {
-    createVideo: video => dispatch(createVideo(video))
+    createVideo: (video, userId) => dispatch(createVideo(video, userId))
   }
 }
 

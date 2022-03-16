@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const multer  = require('multer');
 const upload = multer({ dest: 'uploads/' });
+const Aws = require("aws-sdk")
 const { uploadFile, getFileStream } = require('../../s3')
 const fs = require('fs')
 const util = require('util')
@@ -77,12 +78,14 @@ router.get('/:id/rubric', (req, res) => {
 
 // router.post('/user/:user_id',
 //     // passport.authenticate('jwt', { session: false }),
-//     (req, res) => {
+//     async (req, res) => {
 //         const { errors, isValid } = validateVideoInput(req.body);
 
 //         if (!isValid) {
 //             return res.status(400).json(errors);
 //         }
+
+//         console.log(req.body)
 
 //         const newVideo = new Video({
 //             user: req.body.user,
@@ -97,7 +100,7 @@ router.get('/:id/rubric', (req, res) => {
 // );
 
 router.post('/user/:user_id', passport.authenticate('jwt', { session: false }), upload.single('file'), (req, res) => {
-    const input = {file: req.file, question: req.body.question, user: req.body.user, experience: req.body.experience, industry: req.body.industry};
+    const input = {file: req.file, question: req.body.question, user: req.user, experience: req.body.experience, industry: req.body.industry};
     const { errors, isValid } = validateVideoInput(input);
 
     if (!isValid) {
@@ -107,12 +110,13 @@ router.post('/user/:user_id', passport.authenticate('jwt', { session: false }), 
     console.log(file)
     uploadFile(file)
     .then(response => {
+        console.log(response)
       let videoUrl = response.Key
 
       const newVideo = new Video({
         question: req.body.question,
         file: videoUrl,
-        user: req.body.user,
+        user: req.user.id,
         experience: req.body.experience,
         industry: req.body.industry
     });

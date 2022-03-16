@@ -54,8 +54,8 @@ export const fetchAllVideos = () => dispatch => {
   .then(videos => dispatch(receiveVideos(videos)))
 }
 
-export const createVideo = video => dispatch => {
-  APIUtil.createVideo(video)
+export const createVideo = (video, userId) => dispatch => {
+  APIUtil.createVideo(video, userId)
   .then(video => dispatch(receiveVideo(video)))
   .then(() => dispatch(removeErrors()))
   .catch(err => {

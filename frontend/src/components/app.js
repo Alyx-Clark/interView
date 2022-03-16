@@ -11,15 +11,17 @@ import "./stylesheets/show_feedback.css"
 import AllModals from "./modal/modal_container";
 import NavBarContainer from './nav/navbar_container';
 import MainPage from './main/main_page';
+import PostVideoFormContainer from './video/post_video_form_container'
 
 import ShowFeedbacksContainer from './show/show_feedbacks_container';
 
 const App = () => (
     <div>
         <AllModals/>
-        <NavBarContainer/>
+        <NavBarContainer />
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
+            <ProtectedRoute exact path="/users" component={PostVideoFormContainer}/>
             {/* <ProtectedRoute exact path="/tweets"></ProtectedRoute> */}
         </Switch>
         <ShowFeedbacksContainer />
@@ -27,3 +29,4 @@ const App = () => (
 );
 
 export default App;
+
