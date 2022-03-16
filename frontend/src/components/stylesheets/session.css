@@ -107,13 +107,14 @@
     height: 40px;
     border-radius: 25px;
     border: solid 1.5px;
-    border-color: rgb(20, 68, 100);;
+    border-color: rgb(20, 68, 80);
     background-color: white;
     margin-top: 7px; 
     margin-bottom: 20px;
     font-size: 14px;
     font-weight: 600;
     color: rgb(20, 100, 80);
+    cursor: pointer;
 }
 
 .demo-login:hover {
