@@ -8,10 +8,27 @@ class VideoShow extends React.Component {
   }
 
   render() {
+    var positiveShow = 'unshow';
+    var negativeShow = 'unshow';
+
+    const showPositive = () => {
+      positiveShow = 'show';
+      negativeShow = 'unshow'
+  }
+
+    const showNegative = () => {
+      negativeShow = 'show'; 
+      positiveShow = 'unshow'
+    }
+
     if (this.props.feedbacks === {}) return null;
-    // debugger
     return (
       <div className='feedbacks-container'>
+        <div className='feedback-class'>
+          <button className="positive-title" onClick={showPositive}>YOU DID GREAT!</button>
+          <button className='negative-title' onClick={showNegative}>STILL NEED TO IMPROVE</button>
+        </div>
+        
         {(Object.keys(this.props.feedbacks)).map(key => (
           <ShowFeedbackIndexItem
             positive={this.props.feedbacks[key].positive}
@@ -23,6 +40,8 @@ class VideoShow extends React.Component {
             key={this.props.feedbacks[key]._id}
             deleteVideoFeedbacks={this.props.deleteVideoFeedbacks}
             currentUser={this.props.currentUser}
+            positiveShow={positiveShow}
+            negativeShow={negativeShow}
           />
         ))}
       </div>
