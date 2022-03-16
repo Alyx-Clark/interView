@@ -126,6 +126,7 @@
     padding: 2px; 
     width: auto;
     opacity: 0;
+    color: rgb(80, 80, 80); 
 }
 
 .functional-buttons-container div button{

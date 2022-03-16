@@ -22,6 +22,11 @@
   },
   "homepage": "https://github.com/hwkcode/interView#readme",
   "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.1",
+    "@mui/styled-engine-sc": "^5.4.2",
     "aws-sdk": "^2.1093.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.2",
@@ -35,6 +40,7 @@
     "passport": "^0.5.2",
     "passport-jwt": "^4.0.0",
     "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.3",
     "validator": "^13.7.0"
   },
   "devDependencies": {
