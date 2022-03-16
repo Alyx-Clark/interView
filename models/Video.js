@@ -7,9 +7,9 @@ const VideoSchema = new Schema({
         ref: 'users'
     },
     file: {
-        type: Object
+        type: Object,
         // type: String
-        // required: true
+        required: true
     },
     views: {
         type: Number,
@@ -32,6 +32,7 @@ const VideoSchema = new Schema({
 });
 
 const Video = mongoose.model('video', VideoSchema)
+module.exports = Video
 // module.exports = Video = mongoose.model('Video', VideoSchema);
 
 
