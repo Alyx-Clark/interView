@@ -29,6 +29,8 @@ class ShowFeedbackIndexItem extends React.Component {
     return (
       <div className="feedback">
 
+        <p className="feedbacker-full-name">{this.props.feedbackerFullName}</p>
+
         <div className={`positive-container ${this.props.positiveShow}`}>
           <p className="feedback-positive">{this.props.positive}</p>
           <p className="feedback-date">Feedback on {moment(this.props.date).format('MMMM Do YYYY')}</p>

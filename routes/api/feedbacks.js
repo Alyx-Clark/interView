@@ -18,7 +18,8 @@ router.post('/new', (req, res) => {
     const newFeedback = new Feedback({
       // user: req.user.id,
       // video: req.video.id,
-      user: req.body.user,
+      userId: req.body.userId,
+      userFullName: req.body.userFullName,
       video: req.body.video,
       positive: req.body.positive,
       negative: req.body.negative,
@@ -34,7 +35,8 @@ router.patch('/edit/:id', (req, res) => {
   // res.json({ msg: "This is the feedback for that video" });
   Feedback.findById(req.params.id)
     .then(feedback => {
-      feedback.user = req.body.user
+      feedback.userId = req.body.userId
+      feedback.userFullName = req.body.userFullName
       feedback.video = req.body.video
       feedback.positive = req.body.positive
       feedback.negative = req.body.negative

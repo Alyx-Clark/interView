@@ -40,7 +40,8 @@ class VideoShow extends React.Component {
             <ShowFeedbackIndexItem
               positive={this.props.feedbacks[key].positive}
               negative={this.props.feedbacks[key].negative}
-              feedbackerId={this.props.feedbacks[key].user}
+              feedbackerId={this.props.feedbacks[key].userId}
+              feedbackerFullName={this.props.feedbacks[key].userFullName}
               feedbackId={this.props.feedbacks[key]._id}
               videoId={this.props.feedbacks[key].video}
               date={this.props.feedbacks[key].date}
