@@ -67,4 +67,15 @@ router.delete('/delete/:id',
   }
 );
 
+// get all rubrics from a user
+router.get('/user/:user_id', (req, res) => {
+  // res.json({ msg: "This is the user show page" });
+  Rubric.find({ user: req.params.user_id })
+    .then(videos => res.json(videos))
+    .catch(err =>
+      res.status(404).json({ novideosfound: 'No videos found from that user' }
+      )
+    );
+});
+
 module.exports = router;
