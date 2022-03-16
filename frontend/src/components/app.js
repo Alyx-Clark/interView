@@ -12,6 +12,7 @@ import NavBarContainer from './nav/navbar_container';
 import MainPage from './main/main_page';
 
 import ShowFeedbacksContainer from './show/show_feedbacks_container';
+import RubricsContainer from './show/show_rubrics_container';
 
 const App = () => (
     <div>
@@ -20,6 +21,7 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
             {/* <ProtectedRoute exact path="/tweets"></ProtectedRoute> */}
+            <ProtectedRoute exact path="/testrubrics" component={RubricsContainer} />
         </Switch>
         <ShowFeedbacksContainer />
     </div>

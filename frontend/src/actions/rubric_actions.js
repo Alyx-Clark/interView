@@ -3,7 +3,7 @@ import * as RubricAPIUtil from '../util/rubric_api.util';
 export const RECEIVE_RUBRIC = 'RECEIVE_RUBRIC';
 export const RECEIVE_RUBRICS = 'RECEIVE_RUBRICS';
 export const RECEIVE_RUBRIC_ERRORS = 'RECEIVE_RUBRIC_ERRORS';
-export const REMOVE_REVIEW = 'REMOVE_REVIEW';
+export const REMOVE_RUBRIC = 'REMOVE_RUBRIC';
 
 const receiveRubric = rubric => {
     return {
@@ -14,7 +14,7 @@ const receiveRubric = rubric => {
 
 const receiveRubrics = rubrics => {
     return {
-        type: RECEIVE_VIDEO_RUBRICS,
+        type: RECEIVE_RUBRICS,
         rubrics
     };
 };
@@ -29,7 +29,7 @@ const receiveRubricErrors = errors => {
 const removeRubric = rubricId => {
     return {
         type: REMOVE_RUBRIC,
-        rubric
+        rubricId
     };
 };
 
@@ -39,8 +39,8 @@ export const fetchVideoRubrics = videoId => dispatch => (
 );
 
 export const fetchUserRubrics = userId => dispatch => (
-    RubricAPIUtil.fetchUserRubric(userId)
-        .then(rubric => dispatch(receiveRubrics(rubrics)))
+    RubricAPIUtil.fetchUserRubrics(userId)
+        .then(rubrics => dispatch(receiveRubrics(rubrics)))
 );
 
 export const createRubric = data => dispatch => (

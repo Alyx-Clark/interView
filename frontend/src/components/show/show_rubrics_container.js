@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import ShowRubrics from "./show_rubrics";
-import { fetchVideoFeedbacks, deleteVideoFeedbacks } from '../../actions/feedback_actions';
+import { fetchVideoRubrics } from '../../actions/rubric_actions';
 
 const mapStateToProps = (state) => {
     const rubrics = state.entities.rubrics;
@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    fetchVideoRubrics: videoId => dispatch(fetchVideoFeedbacks(videoId)),
+    fetchVideoRubrics: videoId => dispatch(fetchVideoRubrics(videoId)),
 });
 
 export default connect(
