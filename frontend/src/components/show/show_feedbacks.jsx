@@ -32,7 +32,7 @@ class VideoShow extends React.Component {
     return (
       <div className='feedbacks-container'>
         <div className='feedback-class'>
-          <button className="positive-title" onClick={this.positiveSwitch.bind(this)}>YOU DID GREAT!</button>
+          <button className="positive-title" onClick={this.positiveSwitch.bind(this)}>YOU DID GREAT ON THEM</button>
           <button className='negative-title' onClick={this.negativeSwitch.bind(this)}>STILL NEED TO IMPROVE</button>
         </div>
         <div className='feedback-index-item-container'>
