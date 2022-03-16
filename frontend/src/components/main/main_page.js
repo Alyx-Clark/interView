@@ -25,9 +25,9 @@ class MainPage extends React.Component {
                         </div>
                         <div className='slogan2-container'>
                             <h1>Time to pass the interview</h1>
-                            <h2>interView is a video platform where users can practice their interviewing skills and elicit feedbacks.
-                                interView seeks to make the interviewing process less scary by allowing users to record interview responses to the top behavioral questions
-                                and receive constructive feedback on how they did with a score based on a grading rubric.
+                            <h2>interView is a video platform where you can practice your interviewing skills and elicit feedbacks.
+                                interView seeks to make the interviewing process less scary! You can record interview responses
+                                and receive constructive feedbacks on how you did.
                             </h2>
                             <button className='scroll-button2'>SCROLL DOWN FOR MORE INFO</button>
                         </div>
