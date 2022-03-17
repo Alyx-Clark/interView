@@ -21,7 +21,7 @@ class VideoShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchVideoFeedbacks('622fee0353e5b6c175fd7611')
+    this.props.fetchVideoFeedbacks(this.props.videoId)
   }
 
   render() {
