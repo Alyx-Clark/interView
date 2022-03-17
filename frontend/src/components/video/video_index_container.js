@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchVideos, deleteVideo } from '../../actions/video_actions';
+import { fetchAllVideos, deleteVideo } from '../../actions/video_actions';
 import VideoIndex from './video_index';
 
 const mSTP = state => {
@@ -10,7 +10,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
   return {
-    fetchVideos: userId => dispatch(fetchVideos(userId)),
+    fetchAllVideos: () => dispatch(fetchAllVideos()),
     deleteVideo: videoId => dispatch(deleteVideo(videoId))
   }
 }

@@ -11,9 +11,7 @@ class PostVideoForm extends React.Component {
   handleSubmit(e) {
     console.log(this.props)
     e.preventDefault();
-    // debugger
     this.props.createVideo(this.state, this.props.currentUser.id)
-    debugger
   }
 
   handleChange(key) {
@@ -29,7 +27,7 @@ class PostVideoForm extends React.Component {
 
   render() {
     return (
-      <form className="vf">
+      <form className="vf" style={{marginTop:50}}>
         <div className='vf-title'>Post a video</div>
         <div className='vf-info'>
             <div>hello</div>
