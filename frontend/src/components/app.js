@@ -8,6 +8,7 @@ import "./stylesheets/mainpage.css";
 import "./stylesheets/session.css";
 import "./stylesheets/show_feedback.css";
 import "./stylesheets/post_video.css";
+import "./stylesheets/show_video.css";
 
 import AllModals from "./modal/modal_container";
 import NavBarContainer from './nav/navbar_container';

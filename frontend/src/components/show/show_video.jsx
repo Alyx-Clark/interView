@@ -9,12 +9,19 @@ class VideoShowPage extends React.Component {
     }
 
     render() {
-        debugger
         return (
-            <div>
-                <ShowFeedbacksContainer videoId={this.props.videoId}/>
-                <ShowRubricsContainer videoId={this.props.videoId} />
-                <RubricFormContainer videoId={this.props.videoId}/>
+            <div className='show-video-background'>
+                <div className='mainbox'>
+                    <div className='playing-video-container'>
+                        <img src="video.jpeg"></img>
+                        <ShowFeedbacksContainer videoId={this.props.videoId}/>
+                    </div>
+                    <div className='sidebar'>
+                        <ShowRubricsContainer videoId={this.props.videoId} />
+                        <RubricFormContainer videoId={this.props.videoId}/>
+                    </div>
+                </div>
+
             </div>
         );
     }
