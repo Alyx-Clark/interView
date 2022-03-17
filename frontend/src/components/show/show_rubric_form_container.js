@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import RubricForm from "./show_rubric_form";
-import { createRubric } from '../../actions/rubric_actions';
+import { createRubric, fetchVideoRubrics } from '../../actions/rubric_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const videoId = ownProps.videoId
@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     createRubric: data => dispatch(createRubric(data)),
+    fetchVideoRubrics: videoId => dispatch(fetchVideoRubrics(videoId))
 });
 
 export default connect(
