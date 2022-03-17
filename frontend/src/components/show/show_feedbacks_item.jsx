@@ -49,14 +49,16 @@ class ShowFeedbackIndexItem extends React.Component {
 
         <div className={`feedback-items-container ${this.props.positiveShow}`}>
           <p className="feedbacker-full-name">{this.props.feedbackerFullName}</p>
+          <p className="feedback-date">Feedback on {moment(this.props.date).format('MMMM Do YYYY')}</p>
+          <br/>
           <p className="feedback-positive">{this.props.positive}</p>
-          <p className="feedback-date">{moment(this.props.date).format('MMMM Do YYYY')}</p>
         </div>
 
         <div className={`feedback-items-container ${this.props.negativeShow}`}>
           <p className="feedbacker-full-name">{this.props.feedbackerFullName}</p>
+          <p className="feedback-date">Feedback on {moment(this.props.date).format('MMMM Do YYYY')}</p>
+          <br/>
           <p className="feedback-negative">{this.props.negative}</p>
-          <p className="feedback-date">{moment(this.props.date).format('MMMM Do YYYY')}</p>
         </div>
 
         <div className='feedback-button-wrapper'>

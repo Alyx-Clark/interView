@@ -27,19 +27,77 @@ class PostVideoForm extends React.Component {
 
   render() {
     return (
-      <form className="vf" style={{marginTop:50}}>
-        <div className='vf-title'>Post a video</div>
-        <div className='vf-info'>
-            <div>hello</div>
-          <input className='vf-upload' type="file" onChange={this.handleChange('file')}></input>
-          <div>
-              <input id='vf-question' type="text" placeholder="question" value={this.state.question} onChange={this.handleChange('question')}></input>
-              <input id='vf-industry' type="text" placeholder="industry" value={this.state.industry} onChange={this.handleChange('industry')}></input>
-              <input id='vf-experience' type="text" placeholder="experience" value={this.state.experience} onChange={this.handleChange('experience')}></input>
+      <div className='create-form-background'>
+        <form className="vf">
+
+          <div className='vf-title'>
+            <h1>Create your View</h1>
           </div>
-          <button className='vf-submit' onClick={this.handleSubmit}>Submit</button>
-        </div>
-      </form>
+
+          <div className='vf-info'>
+
+            <div className='vf-upload-container'>
+              <input className='vf-upload' type="file" onChange={this.handleChange('file')}>
+              </input>
+              <span className='upload-text'>Drag and drop your View to upload</span>
+              <button className='vf-submit' onClick={this.handleSubmit}>Create</button>
+            </div>
+
+            <div className='vf-detail-container'>
+                <h2>Tell us a bit about you and your View</h2>
+
+                <input list ="question" 
+                  id='vf-question' 
+                  type="text" 
+                  placeholder="What interview question are you responding to?" 
+                  value={this.state.question} 
+                  onChange={this.handleChange('question')}>
+                </input>
+                <datalist id="question">
+                  <option>Tell me about yourself.</option>
+                  <option>What is your greatest strength?</option>
+                  <option>What is your greatest weakness?</option>
+                  <option> Describe a time you handled a stressful situation.</option>
+                  <option>Tell me about a time when you failed and how you overcame it.</option>
+                </datalist>
+        
+                <input list="industry"
+                  id='vf-industry' 
+                  type="text" 
+                  placeholder="What industry are you in?" 
+                  value={this.state.industry} 
+                  onChange={this.handleChange('industry')}>
+                </input>
+                <datalist id="industry">
+                  <option value="Communication Services" />
+                  <option value="Consumer Discretionary" />
+                  <option value="Energy" />
+                  <option value="Financials" />
+                  <option value="Health Care" />
+                  <option value="Information Technology" />
+                  <option value="Materials" />
+                  <option value="Real Estate" />
+                  <option value="Utilities" />
+                </datalist>
+
+                <input list="experience" 
+                  id='vf-experience' 
+                  type="text" 
+                  placeholder="What work experience do you have?" 
+                  value={this.state.experience} 
+                  onChange={this.handleChange('experience')}>
+                </input>
+                <datalist id="experience">
+                  <option value="Entry-level" />
+                  <option value="Intermediate/experienced level" />
+                  <option value="First-level management" />
+                  <option value="Mid-level management" />
+                  <option value="Senior/Executive management" />
+                </datalist>
+            </div>
+          </div>
+        </form>
+      </div>
     )
   }
 }
