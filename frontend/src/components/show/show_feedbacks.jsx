@@ -1,5 +1,8 @@
 import React from 'react';
 import ShowFeedbackIndexItem from './show_feedbacks_item';
+import CreateFeedbackFormContainer from './create_feedback_form_container';
+import EditFeedbackFormContainer from './edit_feedback_form_container.js';
+import { Switch, Route } from 'react-router-dom';
 
 class VideoShow extends React.Component {
   constructor(props) {
@@ -32,9 +35,14 @@ class VideoShow extends React.Component {
     return (
       <div className='feedbacks-container'>
         <div className='feedback-class'>
-          <button className="positive-title" onClick={this.positiveSwitch.bind(this)}>YOU DID GREAT ON THEM</button>
+          <button className="positive-title" onClick={this.positiveSwitch.bind(this)}>YOU DID GREAT ON THESE</button>
           <button className='negative-title' onClick={this.negativeSwitch.bind(this)}>STILL NEED TO IMPROVE</button>
         </div>
+
+        <div>
+              <CreateFeedbackFormContainer videoId={this.props.videoId} />
+        </div>
+
         <div className='feedback-index-item-container'>
           {(Object.keys(this.props.feedbacks)).map(key => (
             <ShowFeedbackIndexItem
@@ -53,6 +61,9 @@ class VideoShow extends React.Component {
               history={this.props.history}
             />
           ))}
+          <Switch>
+            <Route path="/videos/:videoId/edit/:feedbackId" component={EditFeedbackFormContainer} history={this.props.history} />
+          </Switch>
         </div>
       </div>
     )

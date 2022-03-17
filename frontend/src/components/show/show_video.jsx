@@ -18,12 +18,12 @@ class VideoShowPage extends React.Component {
                 <div className='mainbox'>
                     <div className='playing-video-container'>
                         <img src="video.jpeg"></img>
+                        {/* <Switch>
+                            <Route path="/videos/:videoId/edit/:feedbackId" component={EditFeedbackFormContainer} history={this.props.history} />
+                            <CreateFeedbackFormContainer videoId={this.props.videoId} />
+                        </Switch> */}
                         <ShowFeedbacksContainer videoId={this.props.videoId} history={this.props.history}/>
                     </div>
-                <Switch>
-                    <Route path="/videos/:videoId/edit/:feedbackId" component={EditFeedbackFormContainer} history={this.props.history} />
-                    <CreateFeedbackFormContainer videoId={this.props.videoId} />
-                </Switch>
                     <div className='sidebar'>
                         <ShowRubricsContainer videoId={this.props.videoId} />
                         <RubricFormContainer videoId={this.props.videoId}/>

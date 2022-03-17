@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { editVideoFeedback } from "../../actions/feedback_actions";
 import FeedbackForm from "./feedback_form";
+import { open, close } from '../../actions/modal_actions'; 
 
 const mapStateToProps = (state, ownProps) => {
   let positiveEdit
@@ -24,7 +25,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  action: feedback => dispatch(editVideoFeedback(feedback))
+  action: feedback => dispatch(editVideoFeedback(feedback)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeedbackForm);

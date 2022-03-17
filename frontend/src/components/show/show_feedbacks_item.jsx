@@ -34,7 +34,7 @@ class ShowFeedbackIndexItem extends React.Component {
             Delete
           </button>
           <button className="feedback-edit"
-          onClick={() => this.handleEditClick()}>
+            onClick={() => this.handleEditClick()}>
             Edit
           </button>
         </div>
@@ -45,7 +45,7 @@ class ShowFeedbackIndexItem extends React.Component {
   }
 
   render() {
-    const randomColors = ['#FFE4E1', '#FFA07A', '#F5DEB3', '#8FBC8F', '#B0C4DE', '#87CEEB', '#D8BFD8']
+    const randomColors = ['#FFE4E1', '#FFA07A', '#F5DEB3', '#8FBC8F', '#B0C4DE', '#87CEEB', '#D8BFD8']; 
     return (
       <div className="feedback">
 
@@ -56,14 +56,12 @@ class ShowFeedbackIndexItem extends React.Component {
         <div className={`feedback-items-container ${this.props.positiveShow}`}>
           <p className="feedbacker-full-name">{this.props.feedbackerFullName}</p>
           <p className="feedback-date">Feedback on {moment(this.props.date).format('MMMM Do YYYY')}</p>
-          <br/>
           <p className="feedback-positive">{this.props.positive}</p>
         </div>
 
         <div className={`feedback-items-container ${this.props.negativeShow}`}>
           <p className="feedbacker-full-name">{this.props.feedbackerFullName}</p>
           <p className="feedback-date">Feedback on {moment(this.props.date).format('MMMM Do YYYY')}</p>
-          <br/>
           <p className="feedback-negative">{this.props.negative}</p>
         </div>
 
@@ -78,7 +76,7 @@ class ShowFeedbackIndexItem extends React.Component {
             {this.renderOptionButtons()}
           </div>
         </div>
-
+        
       </div>
     )
   }
