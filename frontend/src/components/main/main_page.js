@@ -51,9 +51,9 @@ class MainPage extends React.Component {
                                 <div className="personal-links" >
                                     <span>Alex Clark</span>
                                     <br/>
-                                    <a href='https://www.linkedin.com/in/alex-b-clark-wrightstate/'>LinkedIn</a>
+                                    <a href='https://www.linkedin.com/in/alex-b-clark-wrightstate/' target="_blank">LinkedIn</a>
                                     <br/>
-                                    <a href='https://github.com/Alyx-Clark'>Github</a>
+                                    <a href='https://github.com/Alyx-Clark' target="_blank">Github</a>
                                 </div>
                             </button>
                             <button className='sliding-item' >
@@ -62,9 +62,9 @@ class MainPage extends React.Component {
                                 <div className="personal-links">
                                     <span>Ian Farr</span>
                                     <br/>
-                                    <a href='https://www.linkedin.com/in/ian-farr/'>LinkedIn</a>
+                                    <a href='https://www.linkedin.com/in/ian-farr/' target="_blank">LinkedIn</a>
                                     <br />
-                                    <a href='https://github.com/IanFarr'>Github</a>
+                                    <a href='https://github.com/IanFarr' target="_blank">Github</a>
                                 </div>
                             </button>
                             <button className='sliding-item' >
@@ -73,9 +73,9 @@ class MainPage extends React.Component {
                                 <div className="personal-links">
                                     <span>Jonathan Kim</span>
                                     <br />
-                                    <a href='https://github.com/hwkcode'>LinkedIn</a>
+                                    <a href='https://github.com/hwkcode' target="_blank">LinkedIn</a>
                                     <br />
-                                    <a href='https://github.com/hwkcode'>Github</a>
+                                    <a href='https://github.com/hwkcode' target="_blank">Github</a>
                                 </div>
                             </button>
                             <button className='sliding-item'>
@@ -84,9 +84,9 @@ class MainPage extends React.Component {
                                 <div className="personal-links">
                                     <span>Qien Gao</span>
                                     <br />
-                                    <a href="https://github.com/qienzgao">LinkedIn</a>
+                                    <a href="https://github.com/qienzgao" target="_blank">LinkedIn</a>
                                     <br />
-                                    <a href="https://www.linkedin.com/in/qien-gao-1390071a7/">Github</a>
+                                    <a href="https://www.linkedin.com/in/qien-gao-1390071a7/" target="_blank">Github</a>
                                 </div>
                             </button>
                         </div>

@@ -11,7 +11,6 @@ class ShowRubrics extends React.Component {
     }
 
     render() {
-        debugger;
         if (this.props.avgrubrics.professionalismRating === undefined || this.props.avgrubrics.professionalismRating === false) {
             return (
                 <div className="rubric">

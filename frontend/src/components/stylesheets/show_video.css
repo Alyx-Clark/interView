@@ -8,10 +8,10 @@
 }
 
 .mainbox {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
- 
 }
 
 .playing-video-container {
@@ -28,26 +28,7 @@
     flex-basis: 30%;
     text-align: center;
     padding: 10px 0px 10px 0px;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
 
-.rubric {
-    width: 90%;
-    height: 25%;
-    background-color: bisque;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 20px;
-}
 
-.rubric-form {
-    width: 90%;
-    height: 25%;
-    background-color: bisque;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
