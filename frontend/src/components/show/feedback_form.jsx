@@ -27,26 +27,26 @@ class FeedbackForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='feedback-form-wrapper'>
         <div className="create-feedback-input-container">
-          <textarea
+          <input
             id='feedback-positive-input'
             placeholder="What did the interviewer do well?"
             defaultValue={this.props.feedback.positive}
             onChange={this.update('positive')}
           />
-          <textarea
+          <input
             id='feedback-negative-input'
             placeholder="How can the interviewer improve?"
             defaultValue={this.props.feedback.negative}
             onChange={this.update('negative')}
           />
-          <button
-            className="feedback-buttton"
-            onClick={this.handleSubmit}>
-            Submit
-          </button>
         </div>
+          <button
+            className="feedback-submit-buttton"
+            onClick={this.handleSubmit}>
+            Give your feedback!
+          </button>
       </div>
     )
   }

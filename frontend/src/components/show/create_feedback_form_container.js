@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  action: feedback => dispatch(createNewVideoFeedback(feedback))
+  action: feedback => dispatch(createNewVideoFeedback(feedback)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeedbackForm);

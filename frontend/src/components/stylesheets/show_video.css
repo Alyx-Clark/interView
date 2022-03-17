@@ -1,7 +1,7 @@
 .show-video-background {
     width: auto;
     height: auto;
-    background-color: rgba(238, 240, 241, 0.445);
+    background-color: rgba(238, 240, 241, 0.3);
     display: flex;
     flex-direction: row;
     padding: 6%;
@@ -20,6 +20,7 @@
 .playing-video-container img {
     width: 100%;
 }
+
 
 .sidebar {
     flex-basis: 30%;
