@@ -16,6 +16,7 @@ class VideoItem extends React.Component{
             <div>
                 <Link to={`/videos/${video._id}`}><img src={image} /></Link>
                 {/* {video.industry} */}
+                {/* <video src={`/api/videos/stream/${video.file}`} controls></video> */}
             </div>
         )
     }
