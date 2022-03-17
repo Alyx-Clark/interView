@@ -29,19 +29,26 @@ class PostVideoForm extends React.Component {
 
   render() {
     return (
-      <form className="vf">
-        <div className='vf-title'>Post a video</div>
-        <div className='vf-info'>
-            <div>hello</div>
-          <input className='vf-upload' type="file" onChange={this.handleChange('file')}></input>
-          <div>
-              <input id='vf-question' type="text" placeholder="question" value={this.state.question} onChange={this.handleChange('question')}></input>
-              <input id='vf-industry' type="text" placeholder="industry" value={this.state.industry} onChange={this.handleChange('industry')}></input>
-              <input id='vf-experience' type="text" placeholder="experience" value={this.state.experience} onChange={this.handleChange('experience')}></input>
+      <div className='create-form-background'>
+        <form className="vf">
+
+          <div className='vf-title'>
+            <h1>Create your View</h1>
           </div>
-          <button className='vf-submit' onClick={this.handleSubmit}>Submit</button>
-        </div>
-      </form>
+
+          <div className='vf-info'>
+            <div className='vf-upload-container'>
+              <input className='vf-upload' type="file" onChange={this.handleChange('file')}></input>
+              <button className='vf-submit' onClick={this.handleSubmit}>Submit</button>
+            </div>
+            <div className='vf-detail-container'>
+                <input id='vf-question' type="text" placeholder="question" value={this.state.question} onChange={this.handleChange('question')}></input>
+                <input id='vf-industry' type="text" placeholder="industry" value={this.state.industry} onChange={this.handleChange('industry')}></input>
+                <input id='vf-experience' type="text" placeholder="experience" value={this.state.experience} onChange={this.handleChange('experience')}></input>
+            </div>
+          </div>
+        </form>
+      </div>
     )
   }
 }

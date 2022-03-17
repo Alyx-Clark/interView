@@ -6,7 +6,8 @@ import "./stylesheets/nav.css";
 import "./stylesheets/modal.css"; 
 import "./stylesheets/mainpage.css"; 
 import "./stylesheets/session.css";
-import "./stylesheets/show_feedback.css"
+import "./stylesheets/show_feedback.css";
+import "./stylesheets/post_video.css";
 
 import AllModals from "./modal/modal_container";
 import NavBarContainer from './nav/navbar_container';
