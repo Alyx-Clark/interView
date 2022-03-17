@@ -9,6 +9,16 @@ class ShowFeedbackIndexItem extends React.Component {
     this.renderOptionButtons = this.renderOptionButtons.bind(this);
   }
 
+  handleEditClick() {
+    if (!this.props.history.location.pathname.includes('edit')) {
+      if (this.props.history.location.pathname.slice(-1) === '/') {
+        this.props.history.push(`${this.props.history.location.pathname}edit/${this.props.feedbackId}`)
+      } else {
+        this.props.history.push(`${this.props.history.location.pathname}/edit/${this.props.feedbackId}`)
+      }
+    }
+  }
+
   renderOptionButtons() {
     if (this.props.currentUser.id === this.props.feedbackerId) {
       return (
@@ -17,7 +27,10 @@ class ShowFeedbackIndexItem extends React.Component {
             onClick={() => this.props.deleteVideoFeedbacks(this.props.feedbackId)}>
             Delete
           </button>
-          <button className="feedback-edit">Edit</button>
+          <button className="feedback-edit"
+          onClick={() => this.handleEditClick()}>
+            Edit
+          </button>
         </div>
       )
     } else {

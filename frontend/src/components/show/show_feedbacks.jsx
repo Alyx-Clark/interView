@@ -50,6 +50,7 @@ class VideoShow extends React.Component {
               currentUser={this.props.currentUser}
               positiveShow={positiveShow}
               negativeShow={negativeShow}
+              history={this.props.history}
             />
           ))}
         </div>
