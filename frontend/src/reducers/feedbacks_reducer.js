@@ -27,6 +27,9 @@ const FeedbacksReducer = (state = {}, action) => {
           updateKey = key;
         }
       })
+      if (updateKey === undefined) {
+        updateKey = Object.keys(newState).length;
+      }
       newState = Object.assign(newState, { [updateKey]: action.feedback.data });
       return newState;
     case REMOVE_VIDEO_FEEDBACK:

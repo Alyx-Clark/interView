@@ -7,6 +7,7 @@ class ShowFeedbackIndexItem extends React.Component {
     super(props)
 
     this.renderOptionButtons = this.renderOptionButtons.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleEditClick() {
@@ -19,12 +20,17 @@ class ShowFeedbackIndexItem extends React.Component {
     }
   }
 
+  handleDelete() {
+    this.props.deleteVideoFeedbacks(this.props.feedbackId)
+    this.props.history.push(`/videos/${this.props.videoId}`)
+  }
+
   renderOptionButtons() {
     if (this.props.currentUser.id === this.props.feedbackerId) {
       return (
         <div className="feedback-buttons">
           <button className="feedback-delete"
-            onClick={() => this.props.deleteVideoFeedbacks(this.props.feedbackId)}>
+            onClick={() => this.handleDelete()}>
             Delete
           </button>
           <button className="feedback-edit"
