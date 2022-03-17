@@ -29,11 +29,13 @@ class VideoIndex extends React.Component {
 
     componentDidMount(){
         this.props.fetchAllVideos();
+        // debugger
     }
 
 
-
+    
     render(){
+        // debugger
         const pics = [
             thumbnail1,
             thumbnail2,

@@ -16,8 +16,9 @@
     display: flex;
     flex-direction: row;  
     /* background-color: rgb(215, 249, 250); */
-    padding: none;
+    padding-top: 10px;
     justify-content: space-between;
+    border-top: solid 0.5px gray;
 }
 
 .feedback-class button {
@@ -41,6 +42,12 @@
 
 .negative-title {
     margin-right: 20px;
+}
+
+.feedback-class button:hover {
+    /* background-color: rgba(163, 163, 163, 0.37); */
+    color: rgb(50, 130, 100); 
+    /* border-bottom: solid 3px rgb(50, 130, 100);  */
 }
 
 .feedback-class button:focus {
@@ -97,7 +104,7 @@
 .feedback-date {
     color: black;
     font-size: 11px;
-    margin-right: 10px;
+    margin: 0 10px 10px 0;
 }
 
 .feedback:hover .feedback-button-wrapper {
@@ -143,4 +150,52 @@
 
 .unshow {
     display: none;
+}
+
+.feedback-form-wrapper {
+    width: auto;
+    /* padding: 0 20px 0 20px; */
+}
+
+.create-feedback-input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.create-feedback-input-container input {
+    width: 40%;
+    height: 100%;
+    display: inline-block;
+    background-color: transparent;
+    padding: 10px 10px 10px 15px;
+    border: 0.5px solid gray;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.create-feedback-input-container input:hover {
+    outline: 1px solid rgb(174, 206, 255);
+}
+
+.create-feedback-input-container input:focus {
+    outline: 1px solid rgb(174, 206, 255);
+}
+
+.feedback-submit-buttton {
+    float:right;
+    border: solid 1px;
+    border-color: transparent;
+    padding: 5px;
+    margin: 10px 0 10px 0;
+    background-color: transparent;
+    font-size: 15px;
+    color: gray;
+    cursor: pointer;
+}
+
+.feedback-submit-buttton:hover {
+    color: rgb(50, 130, 100); 
+    border-bottom: solid 1px rgb(50, 130, 100);
 }
