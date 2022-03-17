@@ -1,4 +1,5 @@
 import React from 'react';
+import ChatIcon from '@mui/icons-material/Chat';
 
 class FeedbackForm extends React.Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class FeedbackForm extends React.Component {
           <button
             className="feedback-submit-buttton"
             onClick={this.handleSubmit}>
-            Give your feedback!
+            Give your feedbacks!
           </button>
       </div>
     )
