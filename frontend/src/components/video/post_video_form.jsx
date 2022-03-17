@@ -54,11 +54,11 @@ class PostVideoForm extends React.Component {
                   onChange={this.handleChange('question')}>
                 </input>
                 <datalist id="question">
-                  <option>Tell me about yourself.</option>
-                  <option>What is your greatest strength?</option>
-                  <option>What is your greatest weakness?</option>
-                  <option> Describe a time you handled a stressful situation.</option>
-                  <option>Tell me about a time when you failed and how you overcame it.</option>
+                  <option value="Tell me about yourself."></option>
+                  <option value="What is your greatest strength?"></option>
+                  <option value="What is your greatest weakness?"></option>
+                  <option value="Describe a time you handled a stressful situation."> </option>
+                  <option value="Tell me about a time when you failed and how you overcame it."></option>
                 </datalist>
         
                 <input list="industry"

@@ -57,7 +57,7 @@ class MainPage extends React.Component {
                                 </div>
                             </button>
                             <button className='sliding-item' >
-                                <img src="Ian.jpeg">
+                                <img src="Ian.jpg">
                                 </img>
                                 <div className="personal-links">
                                     <span>Ian Farr</span>

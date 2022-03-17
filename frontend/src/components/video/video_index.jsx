@@ -59,8 +59,8 @@ class VideoIndex extends React.Component {
             thumbnail20
         ]
         const questions = [
-            "What is your greatest strength?", 
             "Tell me about yourself.", 
+            "What is your greatest strength?", 
             "What is your greatest weakness?", 
             "Describe a time you handled a stressful situation.", 
             "Tell me about a time when you failed and how you overcame it."
