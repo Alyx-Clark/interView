@@ -43,13 +43,50 @@ class ShowRubrics extends React.Component {
         };
 
         // debugger;
-
+        let proWidth = Math.floor((professionalismRating / 5) * 100) + '%'
+        let confWidth = Math.floor((confidenceRating / 5) * 100) + '%'
+        let contWidth = Math.floor((contentRating / 5) * 100) + '%'
+        let voiWidth = Math.floor((voiceRating / 5) * 100) + '%'
+        let average = Math.round(
+                (Math.floor(professionalismRating)
+                + Math.floor(confidenceRating)
+                + Math.floor(contentRating)
+                + Math.floor(voiceRating)) / 4 
+            ).toFixed(1); 
+        
         return (
             <div className="rubric">
-                <div className="professionalism-rating">Professionalism: {professionalismRating}</div>
-                <div className="confidence-rating">Confidence: {confidenceRating}</div>
-                <div className="content-rating">Content: {contentRating}</div>
-                <div className="voice-rating">Voice: {voiceRating}</div>
+                <div className="details">
+                    
+                    <h3 className="professionalism-rating">Professionalism</h3>
+                    <div className="professonalism-rating-bar" style={{ width: proWidth }}>
+                        <span className="rating-ani">{professionalismRating}</span>
+                    </div>
+                    <br/>
+                
+                    <h3 className="confidence-rating">Confidence</h3>
+                    <div className="confidence-rating-bar" style={{ width: confWidth }}>
+                        <span className="rating-ani">{confidenceRating}</span>
+                    </div>
+                    <br />
+                
+                    <h3 className="content-rating">Content</h3>
+                    <div className="content-rating-bar" style={{ width: contWidth }}>
+                        <span className="rating-ani">{contentRating}</span>
+                    </div>
+                    <br />
+
+                    <h3 className="voice-rating">Voice</h3>
+                    <div className="voice-rating-bar" style={{ width: voiWidth }}>
+                        <span className="rating-ani">{voiceRating}</span>
+                    </div>
+                    <br />
+                 
+                </div>
+                <div className="average">
+                    <h3>{average}</h3>
+                    <span>/ 5</span>
+                </div>
             </div>
         );
     }
