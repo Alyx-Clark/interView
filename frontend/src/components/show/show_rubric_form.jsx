@@ -16,12 +16,21 @@ class RubricForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
         this.props.createRubric(this.state);
+        this.props.fetchVideoRubrics(this.props.videoId);
         document.getElementById('professionalism-box').value = '';
         document.getElementById('confidence-box').value = '';
         document.getElementById('content-box').value = '';
         document.getElementById('voice-box').value = '';
+        this.setState({
+            user: this.props.currentUser.id,
+            video: this.props.videoId,
+            professionalism: 0,
+            confidence: 0,
+            content: 0,
+            voice: 0
+        });
+        // debugger
     }
 
     update(property) {
@@ -74,7 +83,7 @@ class RubricForm extends React.Component {
                     />
                     <br />
 
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Submit" onChange={this.change} />
                 </form>
             </div>
         );
