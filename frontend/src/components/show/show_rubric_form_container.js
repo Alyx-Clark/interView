@@ -4,7 +4,7 @@ import RubricForm from "./show_rubric_form";
 import { createRubric } from '../../actions/rubric_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    const videoId = ownProps.match.params.videoId
+    const videoId = ownProps.videoId
     const currentUser = state.session.user;
     return {
         videoId,

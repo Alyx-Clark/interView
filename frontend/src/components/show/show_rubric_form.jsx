@@ -18,6 +18,10 @@ class RubricForm extends React.Component {
         e.preventDefault();
         // debugger
         this.props.createRubric(this.state);
+        document.getElementById('professionalism-box').value = '';
+        document.getElementById('confidence-box').value = '';
+        document.getElementById('content-box').value = '';
+        document.getElementById('voice-box').value = '';
     }
 
     update(property) {
@@ -33,6 +37,7 @@ class RubricForm extends React.Component {
                     <label>Professionalism</label>
                     <br />
                     <input
+                        id="professionalism-box"
                         type="number"
                         value={this.state.professionalism}
                         onChange={this.update("professionalism")}
@@ -42,6 +47,7 @@ class RubricForm extends React.Component {
                     <label>Confidence</label>
                     <br />
                     <input
+                        id="confidence-box"
                         type="number"
                         value={this.state.confidence}
                         onChange={this.update("confidence")}
@@ -51,6 +57,7 @@ class RubricForm extends React.Component {
                     <label>Content</label>
                     <br />
                     <input
+                        id="content-box"
                         type="number"
                         value={this.state.content}
                         onChange={this.update("content")}
@@ -60,6 +67,7 @@ class RubricForm extends React.Component {
                     <label>Voice</label>
                     <br />
                     <input
+                        id="voice-box"
                         type="number"
                         value={this.state.voice}
                         onChange={this.update("voice")}
