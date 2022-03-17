@@ -9,6 +9,16 @@ class ShowFeedbackIndexItem extends React.Component {
     this.renderOptionButtons = this.renderOptionButtons.bind(this);
   }
 
+  handleEditClick() {
+    if (!this.props.history.location.pathname.includes('edit')) {
+      if (this.props.history.location.pathname.slice(-1) === '/') {
+        this.props.history.push(`${this.props.history.location.pathname}edit/${this.props.feedbackId}`)
+      } else {
+        this.props.history.push(`${this.props.history.location.pathname}/edit/${this.props.feedbackId}`)
+      }
+    }
+  }
+
   renderOptionButtons() {
     if (this.props.currentUser.id === this.props.feedbackerId) {
       return (
@@ -17,7 +27,10 @@ class ShowFeedbackIndexItem extends React.Component {
             onClick={() => this.props.deleteVideoFeedbacks(this.props.feedbackId)}>
             Delete
           </button>
-          <button className="feedback-edit">Edit</button>
+          <button className="feedback-edit"
+          onClick={() => this.handleEditClick()}>
+            Edit
+          </button>
         </div>
       )
     } else {
@@ -26,21 +39,36 @@ class ShowFeedbackIndexItem extends React.Component {
   }
 
   render() {
+    const randomColors = ['#FFE4E1', '#FFA07A', '#F5DEB3', '#8FBC8F', '#B0C4DE', '#87CEEB', '#D8BFD8']
     return (
       <div className="feedback">
 
-        <p className="feedbacker-full-name">{this.props.feedbackerFullName}</p>
-
-        <div className={`positive-container ${this.props.positiveShow}`}>
-          <p className="feedback-positive">{this.props.positive}</p>
-          <p className="feedback-date">Feedback on {moment(this.props.date).format('MMMM Do YYYY')}</p>
-          {this.renderOptionButtons()}
+        <div className="initial-profile">
+          <button style={{ backgroundColor: randomColors[Math.floor(Math.random() * randomColors.length)]}}>{this.props.feedbackerFullName[0].toUpperCase()}</button>
         </div>
 
-        <div className={`negative-container ${this.props.negativeShow}`}>
+        <div className={`feedback-items-container ${this.props.positiveShow}`}>
+          <p className="feedbacker-full-name">{this.props.feedbackerFullName}</p>
+          <p className="feedback-positive">{this.props.positive}</p>
+          <p className="feedback-date">{moment(this.props.date).format('MMMM Do YYYY')}</p>
+        </div>
+
+        <div className={`feedback-items-container ${this.props.negativeShow}`}>
+          <p className="feedbacker-full-name">{this.props.feedbackerFullName}</p>
           <p className="feedback-negative">{this.props.negative}</p>
-          <p className="feedback-date">Feedback on{moment(this.props.date).format('MMMM Do YYYY')}</p>
-          {this.renderOptionButtons()}
+          <p className="feedback-date">{moment(this.props.date).format('MMMM Do YYYY')}</p>
+        </div>
+
+        <div className='feedback-button-wrapper'>
+          <div className={` ${this.props.positiveShow}`}>
+            {this.renderOptionButtons()}
+          </div>
+        </div>
+        
+        <div className="feedback-button-wrapper">
+          <div className={`${this.props.negativeShow}`}>
+            {this.renderOptionButtons()}
+          </div>
         </div>
 
       </div>

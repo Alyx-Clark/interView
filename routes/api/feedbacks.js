@@ -16,7 +16,6 @@ router.post('/new', (req, res) => {
     }
 
     const newFeedback = new Feedback({
-      // user: req.user.id,
       // video: req.video.id,
       userId: req.body.userId,
       userFullName: req.body.userFullName,

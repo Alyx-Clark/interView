@@ -65,12 +65,12 @@ router.get('/feedbacks/:id', (req, res) => {
 
 
 router.get('/:id/rubric', (req, res) => {
-    res.json({ msg: "This is the rubric for that video" });
-    // Video.findById(req.params.id)
-    //     .then(video => res.json(video))
-    //     .catch(err =>
-    //         res.status(404).json({ novideofound: 'No video found with that ID' })
-    //     );
+    // res.json({ msg: "This is the rubric for that video" });
+    Rubric.find({ video: req.params.id })
+        .then(rubrics => res.json(rubrics))
+        .catch(err =>
+            res.status(404).json({ novideofound: 'No video found with that ID' })
+        );
 });
 
 

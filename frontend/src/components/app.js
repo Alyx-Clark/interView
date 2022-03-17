@@ -11,10 +11,10 @@ import "./stylesheets/show_feedback.css"
 import AllModals from "./modal/modal_container";
 import NavBarContainer from './nav/navbar_container';
 import MainPage from './main/main_page';
+import VideoShowPageContainer from './show/show_video_container';
 import PostVideoFormContainer from './video/post_video_form_container'
 import VideoIndexContainer from './video/video_index_container'
 
-import ShowFeedbacksContainer from './show/show_feedbacks_container';
 
 const App = () => (
     <div>
@@ -24,9 +24,8 @@ const App = () => (
             <AuthRoute exact path="/" component={MainPage} />
             <ProtectedRoute exact path="/videoindex" component={VideoIndexContainer}/>
             <ProtectedRoute exact path="/users" component={PostVideoFormContainer}/>
-            {/* <ProtectedRoute exact path="/tweets"></ProtectedRoute> */}
+            <ProtectedRoute path="/videos/:videoId" component={VideoShowPageContainer} />
         </Switch>
-        <ShowFeedbacksContainer />
     </div>
 );
 
