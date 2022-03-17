@@ -44,7 +44,9 @@ class NavBar extends React.Component {
 
                         <div className='load-button-wrapper'>
                             <div className='load-button-container'>
-                                <button className='create-button'><AddCircleOutlineIcon fontSize='large' color='action'/></button>
+                                <Link to="/users">
+                                    <button className='create-button'><AddCircleOutlineIcon fontSize='large' color='action'/></button>
+                                </Link>
                             </div>
                             <span className='button-function'>Create View</span>
                         </div>
