@@ -25,6 +25,7 @@ class VideoShow extends React.Component {
   }
 
   render() {
+    debugger
     let positiveShow = this.state.positiveShow ? "show" : "unshow";
     let negativeShow = this.state.negativeShow ? "show" : "unshow";
 
