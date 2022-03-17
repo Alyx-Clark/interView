@@ -99,7 +99,7 @@ router.get('/:id/rubric', (req, res) => {
 //     }
 // );
 
-router.post('/user/:user_id', passport.authenticate('jwt', { session: false }), upload.single('file'), (req, res) => {
+router.post('/user/:user_id', passport.authenticate('jwt', { session: false }), upload.single('file'), async (req, res) => {
     const input = {file: req.file, question: req.body.question, user: req.user, experience: req.body.experience, industry: req.body.industry};
     const { errors, isValid } = validateVideoInput(input);
 
@@ -108,7 +108,7 @@ router.post('/user/:user_id', passport.authenticate('jwt', { session: false }), 
     }
     const file = req.file;
     console.log(file)
-    uploadFile(file)
+    await uploadFile(file)
     .then(response => {
         console.log(response)
       let videoUrl = response.Key
