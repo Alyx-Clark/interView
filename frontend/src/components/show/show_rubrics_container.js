@@ -4,7 +4,8 @@ import ShowRubrics from "./show_rubrics";
 import { fetchVideoRubrics } from '../../actions/rubric_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    const videoId = ownProps.match.params.videoId
+    debugger
+    const videoId = ownProps.videoId;
     const rubrics = state.entities.rubrics;
     const currentUser = state.session.user;
     return {

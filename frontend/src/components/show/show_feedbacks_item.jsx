@@ -26,21 +26,36 @@ class ShowFeedbackIndexItem extends React.Component {
   }
 
   render() {
+    const randomColors = ['#FFE4E1', '#FFA07A', '#F5DEB3', '#8FBC8F', '#B0C4DE', '#87CEEB', '#D8BFD8']
     return (
       <div className="feedback">
 
-        <p className="feedbacker-full-name">{this.props.feedbackerFullName}</p>
-
-        <div className={`positive-container ${this.props.positiveShow}`}>
-          <p className="feedback-positive">{this.props.positive}</p>
-          <p className="feedback-date">Feedback on {moment(this.props.date).format('MMMM Do YYYY')}</p>
-          {this.renderOptionButtons()}
+        <div className="initial-profile">
+          <button style={{ backgroundColor: randomColors[Math.floor(Math.random() * randomColors.length)]}}>{this.props.feedbackerFullName[0].toUpperCase()}</button>
         </div>
 
-        <div className={`negative-container ${this.props.negativeShow}`}>
+        <div className={`feedback-items-container ${this.props.positiveShow}`}>
+          <p className="feedbacker-full-name">{this.props.feedbackerFullName}</p>
+          <p className="feedback-positive">{this.props.positive}</p>
+          <p className="feedback-date">{moment(this.props.date).format('MMMM Do YYYY')}</p>
+        </div>
+
+        <div className={`feedback-items-container ${this.props.negativeShow}`}>
+          <p className="feedbacker-full-name">{this.props.feedbackerFullName}</p>
           <p className="feedback-negative">{this.props.negative}</p>
-          <p className="feedback-date">Feedback on{moment(this.props.date).format('MMMM Do YYYY')}</p>
-          {this.renderOptionButtons()}
+          <p className="feedback-date">{moment(this.props.date).format('MMMM Do YYYY')}</p>
+        </div>
+
+        <div className='feedback-button-wrapper'>
+          <div className={` ${this.props.positiveShow}`}>
+            {this.renderOptionButtons()}
+          </div>
+        </div>
+        
+        <div className="feedback-button-wrapper">
+          <div className={`${this.props.negativeShow}`}>
+            {this.renderOptionButtons()}
+          </div>
         </div>
 
       </div>
