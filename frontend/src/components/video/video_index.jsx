@@ -67,10 +67,10 @@ class VideoIndex extends React.Component {
         ]
         const { videos } = this.props;
         return(
-            <div style={{marginTop: 200}}>
-                <div>
-                    <h2>{questions[0]}</h2>
-                    <div>
+            <div className='vi-container'>
+                <div className='vi-row'>
+                    <h2 className='vi-question'>{questions[0]}</h2>
+                    <div className='vi-thumbnail'>
                         {
                             videos.map((video, idx) => (
                                 questions[0] === video.question ? 
@@ -79,9 +79,9 @@ class VideoIndex extends React.Component {
                         }
                     </div>
                 </div>
-                <div>
-                    <h2>{questions[1]}</h2>
-                    <div>
+                <div className='vi-row'>
+                    <h2 className='vi-question'>{questions[1]}</h2>
+                    <div className='vi-thumbnail'>
                         {
                             videos.map((video, idx) => (
                                 questions[1] === video.question ? 
@@ -90,9 +90,9 @@ class VideoIndex extends React.Component {
                         }
                     </div>
                 </div>
-                <div>
-                    <h2>{questions[2]}</h2>
-                    <div>
+                <div className='vi-row'>
+                    <h2 className='vi-question'>{questions[2]}</h2>
+                    <div className='vi-thumbnail'>
                         {
                             videos.map((video, idx) => (
                                 questions[2] === video.question ? 
@@ -101,9 +101,9 @@ class VideoIndex extends React.Component {
                         }
                     </div>
                 </div>
-                <div>
-                    <h2>{questions[3]}</h2>
-                    <div>
+                <div className='vi-row'>
+                    <h2 className='vi-question'>{questions[3]}</h2>
+                    <div className='vi-thumbnail'>
                         {
                             videos.map((video, idx) => (
                                 questions[3] === video.question ? 
@@ -112,9 +112,9 @@ class VideoIndex extends React.Component {
                         }
                     </div>
                 </div>
-                <div>
-                    <h2>{questions[4]}</h2>
-                    <div>
+                <div className='vi-row'>
+                    <h2 className='vi-question'>{questions[4]}</h2>
+                    <div className='vi-thumbnail'>
                         {
                             videos.map((video, idx) => (
                                 questions[4] === video.question ? 
