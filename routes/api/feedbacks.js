@@ -7,7 +7,7 @@ const Feedback = require('../../models/Feedback');
 const validateFeedbackInput = require('../../validations/feedbacks')
 
 router.post('/new', (req, res) => {
-  // passport.authenticate('jwt', { session: false }),
+  passport.authenticate('jwt', { session: false })
 
     const { errors, isValid } = validateFeedbackInput(req.body);
 
