@@ -12,7 +12,7 @@ import "./stylesheets/post_video.css";
 import AllModals from "./modal/modal_container";
 import NavBarContainer from './nav/navbar_container';
 import MainPage from './main/main_page';
-import VideoShowPage from './show/show_video';
+import VideoShowPageContainer from './show/show_video_container';
 import PostVideoFormContainer from './video/post_video_form_container'
 
 
@@ -22,8 +22,8 @@ const App = () => (
         <NavBarContainer />
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
-            <ProtectedRoute exact path="/videos/:videoId" component={VideoShowPage} />
             <ProtectedRoute exact path="/users" component={PostVideoFormContainer}/>
+            <ProtectedRoute exact path="/videos/:videoId" component={VideoShowPageContainer} />
         </Switch>
     </div>
 );
