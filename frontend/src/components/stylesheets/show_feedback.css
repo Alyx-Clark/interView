@@ -111,7 +111,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 10px;
-    height: 24%;
+    height: auto;
     opacity: 0;
 }
 
@@ -122,13 +122,13 @@
 
 .feedback-buttons button {
     width: 60px;
-    height: 31px;
+    height: 25px;
     border: none;
     cursor: pointer;
     z-index: 99;
     background-color: #aaccf8;
     color: white;
-    margin: 12px;
+    margin-top: 20px;
     border-radius: 10px;
     font-size: 14px;
 }
