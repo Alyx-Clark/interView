@@ -1,7 +1,8 @@
 import {
   RECEIVE_VIDEO_FEEDBACKS,
   REMOVE_VIDEO_FEEDBACK,
-  RECEIVE_VIDEO_FEEDBACK
+  RECEIVE_VIDEO_FEEDBACK,
+  EDIT_VIDEO_FEEDBACK
 } from '../actions/feedback_actions';
 
 const FeedbacksReducer = (state = {}, action) => {
@@ -18,6 +19,15 @@ const FeedbacksReducer = (state = {}, action) => {
         const newKey = Object.keys(newState).length;
         newState = Object.assign(newState, { [newKey]: action.feedback.data });
       }
+      return newState;
+    case EDIT_VIDEO_FEEDBACK:
+      let updateKey
+      Object.keys(newState).forEach(key => {
+        if (newState[key]._id === action.feedback.data._id) {
+          updateKey = key;
+        }
+      })
+      newState = Object.assign(newState, { [updateKey]: action.feedback.data });
       return newState;
     case REMOVE_VIDEO_FEEDBACK:
       let toDelete

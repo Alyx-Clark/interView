@@ -15,6 +15,10 @@ class FeedbackForm extends React.Component {
     this.props.feedback['negative'] = '';
     document.getElementById('feedback-positive-input').value = '';
     document.getElementById('feedback-negative-input').value = '';
+
+    if (this.props.feedback.feedbackId !== '') {
+      this.props.history.push(`/videos/${this.props.feedback.feedbackId}`)
+    }
   }
 
   update(field) {

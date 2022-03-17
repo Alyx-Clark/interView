@@ -25,7 +25,6 @@ class VideoShow extends React.Component {
   }
 
   render() {
-    debugger
     let positiveShow = this.state.positiveShow ? "show" : "unshow";
     let negativeShow = this.state.negativeShow ? "show" : "unshow";
 
@@ -51,6 +50,7 @@ class VideoShow extends React.Component {
               currentUser={this.props.currentUser}
               positiveShow={positiveShow}
               negativeShow={negativeShow}
+              history={this.props.history}
             />
           ))}
         </div>

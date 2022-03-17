@@ -11,3 +11,7 @@ export const deleteVideoFeedback = feedbackId => {
 export const createVideoFeedback = feedback => {
   return axios.post(`/api/feedbacks/new`, feedback)
 };
+
+export const updateVideoFeedback = feedback => {
+  return axios.patch(`/api/feedbacks/edit/${feedback.feedbackId}`, feedback)
+};
