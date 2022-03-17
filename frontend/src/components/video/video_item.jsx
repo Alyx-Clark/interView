@@ -13,8 +13,8 @@ class VideoItem extends React.Component{
         // debugger
 
         return(
-            <div>
-                <Link to={`/videos/${video._id}`}><img src={image} /></Link>
+            <div className='vi-img-container'>
+                <Link to={`/videos/${video._id}`}><img src={image} className='vi-img' /></Link>
                 {/* {video.industry} */}
                 {/* <video src={`/api/videos/stream/${video.file}`} controls></video> */}
             </div>

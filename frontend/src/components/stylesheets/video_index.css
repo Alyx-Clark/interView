@@ -1,0 +1,36 @@
+.vi-container{
+    padding-top: 10rem;
+    padding-left: 6rem;
+}
+
+.vi-row{
+    padding-bottom: 3vh;
+}
+
+.vi-thumbnail{
+    display: flex;
+    width: 90vw;
+    height: 20vh;
+    justify-content: space-evenly;
+}
+
+.vi-img-container{
+    /* display: flex; */
+    /* background-color: green; */
+    width: 100%;
+    height: 100%;
+}
+
+.vi-img{
+    width: 97%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+.vi-question{
+    font-size: 25px;
+    color: rgb(17, 87, 69);
+    padding-bottom: 2vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
