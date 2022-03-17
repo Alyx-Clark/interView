@@ -8,10 +8,10 @@ export const deleteVideoFeedback = feedbackId => {
   return axios.delete(`/api/feedbacks/delete/${feedbackId}`)
 };
 
-// export const getUserTweets = id => {
-//   return axios.get(`/api/tweets/user/${id}`)
-// };
+export const createVideoFeedback = feedback => {
+  return axios.post(`/api/feedbacks/new`, feedback)
+};
 
-// export const writeTweet = data => {
-//   return axios.post('/api/tweets/', data)
-// }
+export const updateVideoFeedback = feedback => {
+  return axios.patch(`/api/feedbacks/edit/${feedback.feedbackId}`, feedback)
+};
