@@ -30,13 +30,17 @@ class VideoShow extends React.Component {
   render() {
     let positiveShow = this.state.positiveShow ? "show" : "unshow";
     let negativeShow = this.state.negativeShow ? "show" : "unshow";
+    let positiveStyle = this.state.positiveShow ? "rgb(50, 130, 100)" : "gray"; 
+    let negativeStyle = this.state.negativeShow ? "rgb(50, 130, 100)" : "gray"; 
+    let positiveBorder = this.state.positiveShow ? "solid 3px rgb(50, 130, 100)" : "none"; 
+    let negativeBorder = this.state.negativeShow ? "solid 3px rgb(50, 130, 100)" : "none"; 
 
     if (this.props.feedbacks === {}) return null;
     return (
       <div className='feedbacks-container'>
         <div className='feedback-class'>
-          <button className="positive-title" onClick={this.positiveSwitch.bind(this)}>YOU DID GREAT ON THESE</button>
-          <button className='negative-title' onClick={this.negativeSwitch.bind(this)}>STILL NEED TO IMPROVE</button>
+          <button className="positive-title" style={{borderBottom: positiveBorder, color: positiveStyle}} onClick={this.positiveSwitch.bind(this)}>YOU DID GREAT ON THESE</button>
+          <button className='negative-title' style={{borderBottom: negativeBorder, color: negativeStyle }} onClick={this.negativeSwitch.bind(this)}>STILL NEED TO IMPROVE</button>
         </div>
 
         <div>

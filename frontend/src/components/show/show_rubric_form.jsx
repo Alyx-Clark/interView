@@ -40,50 +40,67 @@ class RubricForm extends React.Component {
 
     render() {
         return (
-            <div className="rubric-form">
-                <div className="title">Rubric Score</div>
-                <form onSubmit={this.handleSubmit}>
+            <div className="rubric-form-container">
+
+                <div className='send-rubric-button'>
+                    <h2 className="title">
+                    Score
+                    <br/>
+                    and
+                    <br/> 
+                    improve</h2>
+                    <input type="submit" value="Submit" onChange={this.change}/>
+                </div>
+
+                <form className="rubric-form" onSubmit={this.handleSubmit}>
+
                     <label>Professionalism</label>
-                    <br />
                     <input
+                        className='input1'
                         id="professionalism-box"
                         type="number"
                         value={this.state.professionalism}
-                        onChange={this.update("professionalism")}
+                        min="1" 
+                        max="5"
+                        onChange={this.update("professionalism")
+                    }
                     />
-                    <br />
+                    
 
                     <label>Confidence</label>
-                    <br />
                     <input
+                        className='input2'
                         id="confidence-box"
                         type="number"
                         value={this.state.confidence}
+                        min="1"
+                        max="5"
                         onChange={this.update("confidence")}
                     />
-                    <br />
+                    
 
                     <label>Content</label>
-                    <br />
                     <input
+                        className='input3'
                         id="content-box"
                         type="number"
                         value={this.state.content}
+                        min="1"
+                        max="5"
                         onChange={this.update("content")}
                     />
-                    <br />
+                    
 
                     <label>Voice</label>
-                    <br />
                     <input
+                        className='input4'
                         id="voice-box"
                         type="number"
                         value={this.state.voice}
+                        min="1"
+                        max="5"
                         onChange={this.update("voice")}
                     />
-                    <br />
-
-                    <input type="submit" value="Submit" onChange={this.change} />
                 </form>
             </div>
         );
