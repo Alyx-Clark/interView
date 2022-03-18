@@ -6,25 +6,25 @@ class SignupForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            fullname: '', 
+            fullname: '',
             industry: '',
-            experience: '', 
+            experience: '',
             password: '',
             // password2: '',
             errors: {}
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearedErrors = false;
+        // this.clearedErrors = false;
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.signedIn === true) {
-            this.props.history.push('/tweets');
-        }
+    // componentWillUnmount(nextProps) {
+    //     if (nextProps.signedIn === true) {
+    //         this.props.history.push('/videoindex');
+    //     }
 
-        this.setState({ errors: nextProps.errors })
-    }
+    //     this.setState({ errors: nextProps.errors })
+    // }
 
     update(field) {
         return e => this.setState({
@@ -39,11 +39,14 @@ class SignupForm extends React.Component {
             fullname: this.state.fullname,
             password: this.state.password,
             // password2: this.state.password2, 
-            industry: this.state.industry, 
+            industry: this.state.industry,
             experience: this.state.experience
         };
 
-        this.props.signup(user, this.props.history).then(this.props.close);
+        this.props.signup(user);
+        setTimeout(() => {
+            this.props.loginDemo(user).then(this.props.close);
+        }, 500);
     }
 
     handleDemoUser(e) {
@@ -51,7 +54,7 @@ class SignupForm extends React.Component {
         const demo = {
             email: "apple@email.com",
             password: "password",
-        }
+        };
         this.setState(demo);
         this.props.loginDemo(demo).then(this.props.close);
     }
@@ -111,26 +114,26 @@ class SignupForm extends React.Component {
                             onChange={this.update('fullname')}
                             placeholder="Full name"
                         />
-                        <br/>
+                        <br />
                         <input type="text"
                             className='industry-input'
                             value={this.state.industry}
                             onChange={this.update('industry')}
                             placeholder="Select your industry"
                             list="industry"
-                        />  
+                        />
                         <datalist id="industry">
-                            <option value="Communication Services"/>
-                            <option value="Consumer Discretionary"/>
-                            <option value="Energy"/>
-                            <option value="Financials"/>
-                            <option value="Health Care"/>
+                            <option value="Communication Services" />
+                            <option value="Consumer Discretionary" />
+                            <option value="Energy" />
+                            <option value="Financials" />
+                            <option value="Health Care" />
                             <option value="Information Technology" />
                             <option value="Materials" />
                             <option value="Real Estate" />
                             <option value="Utilities" />
                         </datalist>
-                        <br/>
+                        <br />
                         <input type="text"
                             className='experience-input'
                             value={this.state.experience}

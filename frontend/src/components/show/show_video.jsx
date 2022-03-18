@@ -2,6 +2,7 @@ import React from 'react';
 import ShowFeedbacksContainer from './show_feedbacks_container';
 import ShowRubricsContainer from './show_rubrics_container';
 import RubricFormContainer from './show_rubric_form_container';
+// import ShowVideoDisplayContainer from './show_video_display_container';
 import ShowVideoDisplay from './show_video_display';
 
 import VideoItem from '../video/video_item'
@@ -30,6 +31,10 @@ class VideoShowPage extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    // componentDidMount(){
+        // this.props.fetchVideo(this.props.videoId)
+    // }
 
     render() {
 
@@ -62,7 +67,7 @@ class VideoShowPage extends React.Component {
             <div className='show-video-background'>
                 <div className='mainbox'>
                     <div className='playing-video-container'>
-                        <ShowVideoDisplay video={this.props.video} />
+                        <ShowVideoDisplay video={this.props.video} fetchVideo={this.props.fetchVideo} videoId={this.props.videoId}/>
                         <ShowFeedbacksContainer videoId={this.props.videoId} history={this.props.history}/>
                     </div>
                     <div className='sidebar'>

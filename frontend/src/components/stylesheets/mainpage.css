@@ -70,12 +70,13 @@ section {
 
 .slogan-container h1 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 10vh;
+    font-size: 9vh;
     line-height: 150%;
     margin-bottom: 50px;
     position: relative;
     left: -100%; 
     animation: anime1 1s forwards 0.1s;
+    text-align: left;
 }
 
 

@@ -1,10 +1,36 @@
 import React from 'react'
 
-export default function show_video_display(props) {
+class ShowVideoDisplay extends React.Component{
+  constructor(props){
+    super(props)
+
+  }
+
+  componentDidMount(prevProp){
+    this.props.fetchVideo(this.props.videoId)
     // debugger
-    return (
-    <div className='playing-video'>
-            <video src={`/api/videos/stream/${props.video.file}`} controls autoPlay muted></video>
-    </div>
-  )
+  }
+  
+  // componentDidUpdate(prevProp) {
+  //   debugger
+  //   if(this.props.match.params.videoId !== prevProp.match.params.videoId){
+  //      this.props.fetchVideo(this.props.match.params.videoId);
+  //   }
+  //   debugger
+  // }
+
+
+  render(){
+    const { video } = this.props;
+    // debugger
+    return(
+      <div>
+        {
+          video ? <video src={`/api/videos/stream/${video.file}`} controls autoPlay></video> : null
+        }
+      </div>
+    )
+  }
 }
+
+export default ShowVideoDisplay;
