@@ -30,7 +30,6 @@ class RubricForm extends React.Component {
             content: 0,
             voice: 0
         });
-        // debugger
     }
 
     update(property) {

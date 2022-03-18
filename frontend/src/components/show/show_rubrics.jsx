@@ -7,7 +7,6 @@ class ShowRubrics extends React.Component {
 
     componentDidMount() {
         this.props.fetchVideoRubrics(this.props.videoId);
-        debugger;
     }
 
     render() {

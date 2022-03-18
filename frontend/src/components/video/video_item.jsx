@@ -10,7 +10,7 @@ class VideoItem extends React.Component{
 
     render(){
         const { video, image } = this.props;
-        // debugger
+    
 
         return(
             <div className='vi-img-container'>
