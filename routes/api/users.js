@@ -28,8 +28,9 @@ router.post('/register', (req, res) => {
     User.findOne({ email: req.body.email })
         .then(user => {
             if (user) {
-                // Throw a 400 error if the email address already exists
-                return res.status(400).json({ email: "A user has already registered with this address" })
+                // Use the validations to send the error
+                errors.email = 'Email already exists';
+                return res.status(400).json(errors);
             } else {
                 // Otherwise create a new user
                 const newUser = new User({
@@ -44,8 +45,18 @@ router.post('/register', (req, res) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
                         if (err) throw err;
                         newUser.password = hash;
-                        newUser.save()
-                            .then(user => res.json(user))
+                        newUser
+                            .save()
+                            .then(user => {
+                                const payload = { id: user.id, email: user.email, fullname: user.fullname };
+
+                                jwt.sign(payload, keys.secretOrKey, { expiresIn: 36000 }, (err, token) => {          // successfully created JWT and sent back to user
+                                    res.json({
+                                        success: true,
+                                        token: "Bearer " + token
+                                    });
+                                });
+                            })
                             .catch(err => console.log(err));
                     });
                 });

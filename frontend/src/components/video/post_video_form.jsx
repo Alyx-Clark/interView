@@ -13,7 +13,7 @@ class PostVideoForm extends React.Component {
     e.preventDefault();
     this.props.createVideo(this.state, this.props.currentUser.id)
   }
-
+z
   handleChange(key) {
     return e => {
       if (key === 'question' || key === 'experience' || key === 'industry') {

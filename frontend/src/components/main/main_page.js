@@ -8,7 +8,7 @@ class MainPage extends React.Component {
                 <div className='main-page-background'>
                     <section className='main-section'>
                         <div className='slogan-container'>
-                            <h1>No need to worry with interView</h1>
+                            <h1>Master the job interview</h1>
                             <button className='scroll-button'>SCROLL DOWN FOR MORE INFO</button>
                         </div>
                         <div className='main-img-container'>
@@ -25,20 +25,20 @@ class MainPage extends React.Component {
                         </div>
                         <div className='slogan2-container'>
                             <h1>Time to pass the interview</h1>
-                            <h2>interView is a video platform where you can practice your interviewing skills and elicit feedbacks.
-                                interView seeks to make the interviewing process less scary! You can record interview responses
-                                and receive constructive feedbacks on how you did.
+                            <h2>interView is a video platform where you can practice your interviewing skills and elicit feedback.
+                                interView seeks to make the interviewing process <b>less scary</b>! Upload your video interview responses
+                                and receive constructive feedback.
                             </h2>
                             <button className='scroll-button2'>SCROLL DOWN FOR MORE INFO</button>
                         </div>
                     </section>
 
-                    <section className='third-section'>
+                    {/* <section className='third-section'>
                        
                         <div className='extra-intro'>
                             <h2>whatever you wanna say here</h2>
                         </div>
-                    </section>
+                    </section> */}
 
                     <section className='last-section'>
                         <div className='slogan3-container' >
