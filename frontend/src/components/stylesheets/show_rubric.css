@@ -57,23 +57,23 @@
     width: 50%;
     height: 15%;
     background-color: transparent;
-    border: solid 2px rgb(228, 152, 181);
+    border: solid 2px rgb(85, 202, 153);
     border-radius: 15px;
-    color: rgb(228, 152, 181);
+    color: rgb(85, 202, 153);
     cursor: pointer;
     font-size: 17px;
     font-weight: 550;
 }
 
 .send-rubric-button input:hover {
-    background-color: rgb(228, 152, 181);
+    background-color: rgb(85, 202, 153);
     color: white;
 }
 
 .rubric-form input {
     display: block;
     height: 25px;
-    background-color: rgb(228, 152, 181);
+    background-color: rgb(94, 221, 168);
     text-align: left;
     padding-left: 10px;
     font-size: 15px;
@@ -86,7 +86,7 @@
 }
 
 .rubric-form input:hover {
-    background-color: rgb(200, 130, 160);
+    background-color: rgb(84, 201, 152);
 }
 
 .rubric-form input:focus {
