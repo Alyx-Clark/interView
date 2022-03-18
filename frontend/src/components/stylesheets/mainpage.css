@@ -323,6 +323,7 @@ section {
     display: none;
     width: 100%;
     height: 100%;
+    color: white;
 }
 
 .personal-links a{
@@ -332,6 +333,7 @@ section {
 
 .personal-links a:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .personal-links a:visited{

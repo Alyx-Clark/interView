@@ -10,6 +10,8 @@
 
 .vi-row{
     padding-bottom: 3vh;
+    /* overflow-x: scroll;
+    overflow-y: hidden; */
     /* background-color: green; */
 }
 
