@@ -42,65 +42,66 @@ class RubricForm extends React.Component {
         return (
             <div className="rubric-form-container">
 
-                <div className='send-rubric-button'>
-                    <h2 className="title">
-                    Score
-                    <br/>
-                    and
-                    <br/> 
-                    improve</h2>
-                    <input type="submit" value="Submit" onChange={this.change}/>
-                </div>
-
                 <form className="rubric-form" onSubmit={this.handleSubmit}>
 
-                    <label>Professionalism</label>
-                    <input
-                        className='input1'
-                        id="professionalism-box"
-                        type="number"
-                        value={this.state.professionalism}
-                        min="1" 
-                        max="5"
-                        onChange={this.update("professionalism")
-                    }
-                    />
-                    
+                    <div className='send-rubric-button'>
+                        <h2 className="title">
+                            Score
+                            <br />
+                            and
+                            <br />
+                            improve</h2>
+                        <button type="submit" onChange={this.change}>Send</button>
+                    </div>
 
-                    <label>Confidence</label>
-                    <input
-                        className='input2'
-                        id="confidence-box"
-                        type="number"
-                        value={this.state.confidence}
-                        min="1"
-                        max="5"
-                        onChange={this.update("confidence")}
-                    />
-                    
+                    <div className='rubric-form-inputs'>
+                        <label>Professionalism</label>
+                        <input
+                            className='input1'
+                            id="professionalism-box"
+                            type="number"
+                            value={this.state.professionalism}
+                            min="1" 
+                            max="5"
+                            onChange={this.update("professionalism")
+                        }
+                        />
 
-                    <label>Content</label>
-                    <input
-                        className='input3'
-                        id="content-box"
-                        type="number"
-                        value={this.state.content}
-                        min="1"
-                        max="5"
-                        onChange={this.update("content")}
-                    />
-                    
+                        <label>Confidence</label>
+                        <input
+                            className='input2'
+                            id="confidence-box"
+                            type="number"
+                            value={this.state.confidence}
+                            min="1"
+                            max="5"
+                            onChange={this.update("confidence")}
+                        />
+                        
 
-                    <label>Voice</label>
-                    <input
-                        className='input4'
-                        id="voice-box"
-                        type="number"
-                        value={this.state.voice}
-                        min="1"
-                        max="5"
-                        onChange={this.update("voice")}
-                    />
+                        <label>Content</label>
+                        <input
+                            className='input3'
+                            id="content-box"
+                            type="number"
+                            value={this.state.content}
+                            min="1"
+                            max="5"
+                            onChange={this.update("content")}
+                        />
+                        
+
+                        <label>Voice</label>
+                        <input
+                            className='input4'
+                            id="voice-box"
+                            type="number"
+                            value={this.state.voice}
+                            min="1"
+                            max="5"
+                            onChange={this.update("voice")}
+                        />
+                    </div>
                 </form>
             </div>
         );
