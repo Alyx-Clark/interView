@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import VideoShowPage from "./show_video";
+import { fetchAllVideos } from '../../actions/video_actions';
 import { fetchVideo } from '../../actions/video_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
     console.log(state)
@@ -14,12 +15,17 @@ const mapStateToProps = (state, ownProps) => {
         currentUser,
         videoId,
         video,
-        history
+        history, 
+        videos: Object.values(state.entities.videos)
     };
 };
 
-const mDTP = dispatch => ({
-    fetchVideo: videoId => dispatch(fetchVideo(videoId))
-})
+const mDTP = dispatch => {
+    return {
+        fetchAllVideos: () => dispatch(fetchAllVideos()),
+        fetchVideo: videoId => dispatch(fetchVideo(videoId))
+    }
+}
 
-export default withRouter(connect(mapStateToProps, mDTP)(VideoShowPage));
+export default connect(mapStateToProps, mDTP)(VideoShowPage);
+
