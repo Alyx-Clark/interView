@@ -6,12 +6,16 @@ class PostVideoForm extends React.Component {
     this.state = {question: '', file: null, views: 0, experience: '', industry: '', user: this.props.currentUser.id }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.redirectToShow = this.redirectToShow.bind(this)
+    this.handleRedirect = this.handleRedirect.bind(this);
   }
 
   handleSubmit(e) {
     console.log(this.props)
     e.preventDefault();
     this.props.createVideo(this.state, this.props.currentUser.id)
+
+    this.redirectToShow()
   }
 
   handleChange(key) {
@@ -20,10 +24,28 @@ class PostVideoForm extends React.Component {
         this.setState({[key]: e.currentTarget.value})
       } else {
         this.setState({[key]: e.target.files[0]})
+        alert('file attached')
       }
     }
   }
 
+  async redirectToShow() {
+    this.props.fetchAllVideos()
+    setTimeout(() => { this.handleRedirect()}, 2000)
+  }
+
+  handleRedirect() {
+    let newVideoId
+    Object.keys(this.props.videos).reverse().every(key => {
+      if (this.props.videos[key].user === this.props.currentUser.id) {
+        newVideoId = this.props.videos[key]._id
+        this.props.history.push(`/videos/${newVideoId}`)
+        return false
+      }
+    })
+
+      if (newVideoId === undefined) this.props.history.push('/')
+    }
 
   render() {
     return (
