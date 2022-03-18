@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import VideoShowPage from "./show_video";
+import { fetchAllVideos } from '../../actions/video_actions';
 
 const mapStateToProps = (state, ownProps) => {
     // debugger
@@ -12,8 +13,15 @@ const mapStateToProps = (state, ownProps) => {
         currentUser,
         videoId,
         video,
-        history
+        history, 
+        videos: Object.values(state.entities.videos)
     };
 };
 
-export default connect(mapStateToProps)(VideoShowPage);
+const mDTP = dispatch => {
+    return {
+        fetchAllVideos: () => dispatch(fetchAllVideos()),
+    }
+}
+
+export default connect(mapStateToProps, mDTP)(VideoShowPage);

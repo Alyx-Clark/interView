@@ -33,12 +33,12 @@ class MainPage extends React.Component {
                         </div>
                     </section>
 
-                    <section className='third-section'>
+                    {/* <section className='third-section'>
                        
                         <div className='extra-intro'>
                             <h2>whatever you wanna say here</h2>
                         </div>
-                    </section>
+                    </section> */}
 
                     <section className='last-section'>
                         <div className='slogan3-container' >

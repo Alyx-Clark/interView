@@ -338,6 +338,11 @@ section {
     text-decoration: none; 
 }
 
+.personal-links a:active {
+  color: inherit;
+  text-decoration: none;
+ }
+
 .sliding-item:hover .personal-links {
    display: flex;
    flex-direction: column;
