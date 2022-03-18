@@ -17,7 +17,7 @@ class PostVideoForm extends React.Component {
 
     this.redirectToShow()
   }
-
+z
   handleChange(key) {
     return e => {
       if (key === 'question' || key === 'experience' || key === 'industry') {
