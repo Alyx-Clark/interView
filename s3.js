@@ -11,7 +11,6 @@ const s3 = new S3({region, accessKeyId, secretAccessKey})
 
 
 function uploadFile(file) {
-  console.log("asdfasdfasdfadf")
   const fileStream = fs.createReadStream(file.path) //.path
   // const fileStream = "hi"
 

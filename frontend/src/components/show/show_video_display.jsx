@@ -24,7 +24,7 @@ class ShowVideoDisplay extends React.Component{
     const { video } = this.props;
     // debugger
     return(
-      <div>
+      <div className='playing-video'>
         {
           video ? <video src={`/api/videos/stream/${video.file}`} controls autoPlay></video> : null
         }
